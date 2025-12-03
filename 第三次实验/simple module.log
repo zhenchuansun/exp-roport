@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.5)  28 NOV 2025 20:28
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.5)  3 DEC 2025 20:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -533,7 +533,7 @@ File: img1.jpg Graphic file (type bmp)
  [5]
 File: img2.jpg Graphic file (type bmp)
 <img2.jpg>
- [6] [7] (./simple module.aux)
+ [6] (./simple module.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -548,4 +548,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  93i,7n,97p,563b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on simple module.pdf (7 pages).
+Output written on simple module.pdf (6 pages).

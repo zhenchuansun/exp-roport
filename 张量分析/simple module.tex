@@ -1,0 +1,306 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+
+\title{\textbf{张量分析第一次作业}}
+\author{孙振川 \quad PB23081463}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答:}}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记。}}{\par}
+
+\begin{document}
+
+\maketitle
+\begin{problem}
+1． 10 已知：以 $i, j, k$ 表示三维空间中笛卡儿坐标基矢量，
+
+$$
+\boldsymbol{g}_1=\boldsymbol{j}+\boldsymbol{k}, \quad \boldsymbol{g}_2=\boldsymbol{i}+\boldsymbol{k}, \quad \boldsymbol{g}_3=\boldsymbol{i}+\boldsymbol{j}
+$$
+
+（1）按公式（1．2．17），求 $\boldsymbol{g}^1, \boldsymbol{g}^2, \boldsymbol{g}^3$ 以 $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$ 表示的式子；（2）求 $g_{r s}$ 。
+\end{problem}
+
+\begin{solution}
+$$
+\left[\begin{array}{lll}
+\boldsymbol{g}_1 & \boldsymbol{g}_2 & \boldsymbol{g}_3
+\end{array}\right]=\sqrt{g}=2
+$$
+$$
+\begin{aligned}
+& \mathbf{g}^{\mathbf{1}}=\frac{1}{\sqrt{g}}\left(\mathbf{g}_2 \times \mathbf{g}_3\right)=-\frac{1}{2}\boldsymbol{i}+\frac{1}{2}\boldsymbol{j}+\frac{1}{2}\boldsymbol{k}\\
+& \mathbf{g}^2=\frac{1}{\sqrt{g}}\left(\mathbf{g}_3 \times \mathbf{g}_1\right)= \frac{1}{2}\boldsymbol{i}-\frac{1}{2}\boldsymbol{j}+\frac{1}{2}\boldsymbol{k}\\
+& \mathbf{g}^3=\frac{1}{\sqrt{g}}\left(\mathbf{g}_1 \times \mathbf{g}_2\right)=\frac{1}{2}\boldsymbol{i}+\frac{1}{2}\boldsymbol{j}-\frac{1}{2}\boldsymbol{k}
+\end{aligned}
+$$
+
+$g_{r s}$ 的计算：
+$$
+\begin{aligned}
+& g_{11}=\boldsymbol{g}_1 \cdot \boldsymbol{g}_1=2, \quad g_{12}=\boldsymbol{g}_1 \cdot \boldsymbol{g}_2=1, \quad g_{13}=\boldsymbol{g}_1 \cdot \boldsymbol{g}_3=1 \\
+& g_{21}=\boldsymbol{g}_2 \cdot \boldsymbol{g}_1=1, \quad g_{22}=\boldsymbol{g}_2 \cdot \boldsymbol{g}_2=2, \quad g_{23}=\boldsymbol{g}_2 \cdot \boldsymbol{g}_3=1 \\
+& g_{31}=\boldsymbol{g}_3 \cdot \boldsymbol{g}_1=1, \quad g_{32}=\boldsymbol{g}_3 \cdot \boldsymbol{g}_2=1, \quad g_{33}=\boldsymbol{g}_3 \cdot \boldsymbol{g}_3=2
+\end{aligned}
+$$
+$g_{r s}$ 矩阵为：
+$$
+\left[g_{r s}\right]=\left[\begin{array}{lll}
+2 & 1 & 1 \\
+1 & 2 & 1 \\
+1 & 1 & 2
+\end{array}\right]
+$$
+\end{solution}
+
+\begin{problem}
+1.12 已知： $\boldsymbol{u}=2 \boldsymbol{g}_1+3 \boldsymbol{g}_2-\boldsymbol{g}_3, \boldsymbol{v}=\boldsymbol{g}_1-\boldsymbol{g}_2+\boldsymbol{g}_3$ ，基矢量同上题。运用 1．11 题求得的 $g_{r s}$ 计算：
+（1） $\boldsymbol{u} \cdot \boldsymbol{v}$ ；（2） $\boldsymbol{u}, \boldsymbol{v}$ 的协变分量。
+\end{problem}
+
+\begin{solution}
+$$
+u=\left[\begin{array}{lll}
+2 & 3 & -1 
+\end{array}\right], \quad 
+v=\left[\begin{array}{lll}
+1 & -1 & 1
+\end{array}\right] \\
+$$
+$$
+\boldsymbol{u} \cdot \boldsymbol{v}= g_{i j} u^{i}v^{j}=2
+$$
+
+协变分量计算：
+$$
+\begin{aligned}
+& u_1=g_{11} u^1+g_{12} u^2+g_{13} u^3=2 \times 2+1 \times 3+1 \times(-1)=6 \\
+& u_2=g_{21} u^1+g_{22} u^2+g_{23} u^3=1 \times 2+2 \times 3+1 \times(-1)=7 \\
+& u_3=g_{31} u^1+g_{32} u^2+g_{33} u^3=1 \times 2+1 \times 3+2 \times(-1)=3
+\end{aligned}
+$$
+$$
+\begin{aligned}
+& v_1=g_{11} v^1+g_{12} v^2+g_{13} v^3=2 \times 1+1 \times(-1)+1 \times 1=2 \\
+& v_2=g_{21} v^1+g_{22} v^2+g_{23} v^3=1 \times 1+2 \times(-1)+1 \times 1=0 \\
+& v_3=g_{31} v^1+g_{32} v^2+g_{33} v^3=1 \times 1+1 \times(-1)+2 \times 1=2
+\end{aligned}
+$$
+因此， $\boldsymbol{u}$ 的协变分量为 $(6,7,3)$ ，$\boldsymbol{v}$ 的协变分量为 $(2,0,2)$ 。
+\end{solution}
+
+
+\begin{problem}
+1． 13 已知：（1）圆柱坐标系如图 1． 17（a），$r=x^1, \theta=x^2, z=x^3$ 。
+（2）球坐标系如图 1．17（b），$r=x^1, \theta=x^2, \varphi=x^3$ 。\\  
+1.17 求：题 1.13 所示圆柱坐标和球坐标 $x^i$ ，与笛卡儿坐标 $x^{j^{\prime}}$ 的转换系数 $\beta_{j^{\prime}}^i$ 与 $\beta_i^{j^{\prime}}$ 。
+\end{problem}
+\begin{solution}
+（1）圆柱坐标与笛卡儿坐标的转换系数：
+$$
+\beta_{j^{\prime}}^i=\frac{\partial x^i}{\partial x^{j^{\prime}}}=\left[\begin{array}{ccc}
+\frac{x^{1^{\prime}}}{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2}} & \frac{x^{2^{\prime}}}{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2}} & 0 \\
+-\frac{x^{2^{\prime}}}{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2} & \frac{x^{1^{\prime}}}{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2} & 0 \\
+0 & 0 & 1
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+\cos \theta & \sin \theta & 0 \\
+-\sin \theta & \cos \theta & 0 \\
+0 & 0 & 1
+\end{array}\right]
+$$
+$$
+\beta_i^{j^{\prime}}=\frac{\partial x^{j^{\prime}}}{\partial x^i}={\beta_{j^{\prime}}^i}^T=\left[\begin{array}{ccc}
+\frac{x^1}{\sqrt{(x^1)^2+(x^2)^2}} & -\frac{x^2}{\sqrt{(x^1)^2+(x^2)^2}} & 0 \\
+\frac{x^2}{\sqrt{(x^1)^2+(x^2)^2}} & \frac{x^1}{\sqrt{(x^1)^2+(x^2)^2}} & 0 \\
+0 & 0 & 1
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+\cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+0 & 0 & 1
+\end{array}\right]
+$$
+（2）球坐标与笛卡儿坐标的转换系数：
+$$
+\beta_{j^{\prime}}^i=\frac{\partial x^i}{\partial x^{j^{\prime}}}=\left[\begin{array}{ccc}
+\frac{x^{1^{\prime}}}{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2+(x^{3^{\prime}})^2}} & \frac{x^{2^{\prime}}}{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2+(x^{3^{\prime}})^2}} & \frac{x^{3^{\prime}}}{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2+(x^{3^{\prime}})^2}} \\
+\frac{x^{1^{\prime}} x^{3^{\prime}}}{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2} \left((x^{1^{\prime}})^2+(x^{2^{\prime}})^2+(x^{3^{\prime}})^2\right)} & \frac{x^{2^{\prime}} x^{3^{\prime}}}{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2} \left((x^{1^{\prime}})^2+(x^{2^{\prime}})^2+(x^{3^{\prime}})^2\right)} & -\frac{\sqrt{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2}}{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2+(x^{3^{\prime}})^2} \\
+-\frac{x^{2^{\prime}}}{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2} & \frac{x^{1^{\prime}}}{(x^{1^{\prime}})^2+(x^{2^{\prime}})^2} & 0
+\end{array}\right]
+$$
+$$
+=\left[\begin{array}{ccc}
+\sin \theta \cos \phi & \sin \theta \sin \phi & \cos \theta \\
+\cos \theta \cos \phi & \cos \theta \sin \phi & -\sin \theta \\
+-\sin \phi & \cos \phi & 0
+\end{array}\right]
+$$
+$$
+\beta_i^{j^{\prime}}=\frac{\partial x^{j^{\prime}}}{\partial x^i}={\beta_{j^{\prime}}^i}^T=\left[\begin{array}{ccc}
+\frac{x^1}{\sqrt{(x^1)^2+(x^2)^2+(x^3)^2}} & \frac{x^1 x^3}{\sqrt{(x^1)^2+(x^2)^2} \left((x^1)^2+(x^2)^2+(x^3)^2\right)} & -\frac{x^2}{(x^1)^2+(x^2)^2} \\
+\frac{x^2}{\sqrt{(x^1)^2+(x^2)^2+(x^3)^2}} & \frac{x^2 x^3}{\sqrt{(x^1)^2+(x^2)^2} \left((x^1)^2+(x^2)^2+(x^3)^2\right)} & \frac{x^1}{(x^1)^2+(x^2)^2} \\
+\frac{x^3}{\sqrt{(x^1)^2+(x^2)^2+(x^3)^2}} & -\frac{\sqrt{(x^1)^2+(x^2)^2}}{(x^1)^2+(x^2)^2+(x^3)^2} & 0
+\end{array}\right]
+$$
+$$
+=\left[\begin{array}{ccc}
+\sin \theta \cos \phi & \cos \theta \cos \phi & -\sin \phi \\
+\sin \theta \sin \phi & \cos \theta \sin \phi & \cos \phi \\
+\cos \theta  &  -\sin \theta & 0
+\end{array}\right]
+$$
+
+\end{solution}
+
+
+
+\begin{problem}
+1． 24 已知：$N$ 为对称二阶张量，$\Omega$ 为反对称二阶张量，$u$ 为任意矢量。
+求证：（1） $\boldsymbol{u} \cdot \boldsymbol{N}=\boldsymbol{N} \cdot \boldsymbol{u}$
+（2） $\boldsymbol{u} \cdot \boldsymbol{\Omega}=-\boldsymbol{\Omega} \cdot \boldsymbol{u}$
+\end{problem}
+\begin{solution}
+设 $\boldsymbol{u}$ 的分量为 $u_i$ ，$\boldsymbol{N}$ 的分量为 $N_{i j}$ ，$\boldsymbol{\Omega}$ 的分量为 $\Omega_{i j}$ 。
+（1） $\boldsymbol{u} \cdot \boldsymbol{N}$ 的分量为：
+$$
+(\boldsymbol{u} \cdot \boldsymbol{N})_j = u_i N_{i j}，(\boldsymbol{u} \cdot \boldsymbol{\Omega})_j = u_i \Omega_{i j}
+$$
+$\boldsymbol{N} \cdot \boldsymbol{u}$ 的分量为
+$$
+(\boldsymbol{N} \cdot \boldsymbol{u})_j = N_{j i} u_i，(\boldsymbol{\Omega} \cdot \boldsymbol{u})_j = \Omega_{j i} u_i
+$$
+由于 $\boldsymbol{N}$ 为对称张量，即 $N_{i j} = N_{j i}$ ，所以
+$$
+(\boldsymbol{u} \cdot \boldsymbol{N})_j = (\boldsymbol{N} \cdot \boldsymbol{u})_j
+$$
+由于 $\boldsymbol{\Omega}$ 为对称张量，即 $\Omega_{i j} = -\Omega_{j i}$ ，所以
+$$
+(\boldsymbol{u} \cdot \boldsymbol{\Omega})_j =- (\boldsymbol{\Omega} \cdot \boldsymbol{u})_j
+$$
+因此， $\boldsymbol{u} \cdot \boldsymbol{N}=\boldsymbol{N} \cdot \boldsymbol{u}$ ,\quad $\boldsymbol{u} \cdot \boldsymbol{\Omega}=-\boldsymbol{\Omega} \cdot \boldsymbol{u}$。
+
+
+\end{solution}
+
+
+\begin{problem}
+1.35 已知：任意张量 $\boldsymbol{T}$ 和度量张量 $\boldsymbol{G}$ 。
+
+求证： $\boldsymbol{G} \cdot \boldsymbol{T}=\boldsymbol{T}=\boldsymbol{T} \cdot \boldsymbol{G}$
+\end{problem}
+\begin{solution}
+设 $\boldsymbol{T}$ 的分量为 $T_{i j \ldots k}$ ，$\boldsymbol{G}$ 的分量为 $G_{i j}$ 。
+则 $\boldsymbol{G} \cdot \boldsymbol{T}$ 的分量为：
+$$
+(\boldsymbol{G} \cdot \boldsymbol{T})_{j \ldots k} = G_{i j} T_{i j \ldots k}
+$$
+$\boldsymbol{T} \cdot \boldsymbol{G}$ 的分量为
+$$
+(\boldsymbol{T} \cdot \boldsymbol{G})_{i \ldots j} = T_{i \ldots j} G_{j k}
+$$
+由于度量张量的定义为 $G_{i j} = \delta_{i j}$ ，所以
+$$
+(\boldsymbol{G} \cdot \boldsymbol{T})_{j \ldots k} = T_{j \ldots k}
+$$
+$$
+(\boldsymbol{T} \cdot \boldsymbol{G})_{i \ldots j} = T_{i \ldots j}
+$$
+因此， $\boldsymbol{G} \cdot \boldsymbol{T}=\boldsymbol{T}=\boldsymbol{T} \cdot \boldsymbol{G}$ 。
+
+\end{solution}
+
+
+\begin{problem}
+1.38 在笛卡儿坐标系中，各向同性材料的弹性关系为
+
+$$
+\begin{array}{ll}
+\varepsilon_{11}=\frac{1}{E}\left[\sigma^{11}-\nu\left(\sigma^{22}+\sigma^{33}\right)\right], & \varepsilon_{12}=\frac{1+\nu}{E} \sigma^{12} \\
+\varepsilon_{22}=\frac{1}{E}\left[\sigma^{22}-\nu\left(\sigma^{33}+\sigma^{11}\right)\right], & \varepsilon_{23}=\frac{1+\nu}{E} \sigma^{23} \\
+\varepsilon_{33}=\frac{1}{E}\left[\sigma^{33}-\nu\left(\sigma^{11}+\sigma^{22}\right)\right], & \varepsilon_{31}=\frac{1+\nu}{E} \sigma^{31}
+\end{array}
+$$
+（1）利用商法则证明此式必定可以表示为一个张量的代数运算等式，写出其实体形式，说明等式中各阶张量的阶数。
+（2）将上式表示为可运用于任意坐标系的张量分量形式。
+（3）写出任意坐标系中的协变分量 $D_{i j k l}$ 用 $E$ ，$\nu$ 及度量张量分量表达的形式，以及 $\boldsymbol{D}$的并矢表达式。
+\end{problem}
+\begin{solution}
+(1) 设 $\boldsymbol{\varepsilon}$ 为应变张量，$\boldsymbol{\sigma}$ 为应力张量，则上述关系可以表示为：
+$$
+\boldsymbol{\varepsilon} = \frac{1}{E} \left[ \boldsymbol{\sigma} - \nu (\text{tr}(\boldsymbol{\sigma}) \boldsymbol{I}) \right] + \frac{1+\nu}{E} \boldsymbol{\sigma}_{\text{shear}}
+$$
+其中，$\text{tr}(\boldsymbol{\sigma})$ 为应力张量的迹，$\boldsymbol{I}$ 为单位张量，$\boldsymbol{\sigma}_{\text{shear}}$ 为剪切应力部分。此等式中，$\boldsymbol{\varepsilon}$ 和 $\boldsymbol{\sigma}$ 均为二阶张量。
+
+(2) 在任意坐标系中，上述关系可以表示为：
+$$
+\varepsilon_{ij} = \frac{1}{E} \left[ \sigma^{ij} - \nu g^{ij} g_{kl} \sigma^{kl} \right] + \frac{1+\nu}{E} \sigma^{ij}_{\text{shear}}
+$$
+(3) 任意坐标系中的协变分量 $D_{ijkl}$ 可以表示为：
+$$
+D_{ijkl} = \frac{1}{E} \left( g_{ik} g_{jl} + g_{il} g_{jk} - 2 \nu g_{ij} g_{kl} \right)
+$$
+并矢表达式为：
+$$
+\boldsymbol{D} = \frac{1}{E} \left( \boldsymbol{I} \otimes \boldsymbol{I} - 2 \nu \boldsymbol{I} \otimes \boldsymbol{I} \right)
+$$
+
+
+\end{solution}
+
+
+\begin{problem}
+1． 44$ \boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}, \boldsymbol{D}$ 为矢量。
+利用置换张量求证：$(\dot{A} \times B) \cdot(C \times D)=(A \cdot C)(B \cdot D)-(A \cdot D)(B \cdot C)$
+\end{problem}
+\begin{solution}
+$$
+(\dot{A} \times B) \cdot(C \times D)=(A \cdot C)(B \cdot D)-(A \cdot D)(B \cdot C)=\epsilon_{i j k} A_j B_k \epsilon_{i l m} C_l D_m
+$$
+利用置换张量的性质，有：
+$$
+\epsilon_{i j k} \epsilon_{i l m}=\delta_{j l} \delta_{k m}-\delta_{j m} \delta_{k l}
+$$
+因此，
+$$
+(\dot{A} \times B) \cdot(C \times D) = (\delta_{j l} \delta_{k m}-\delta_{j m} \delta_{k l}) A_j B_k C_l D_m
+$$
+$$= A_j C_j B_k D_k - A_j D_j B_k C_k = (A \cdot C)(B \cdot D) - (A \cdot D)(B \cdot C)
+$$
+
+\end{solution}
+
+
+\begin{problem}
+1.48 已知： $\boldsymbol{\Omega}$ 为二阶反对称张量，矢量 $\boldsymbol{\omega}$ 与 $\boldsymbol{\Omega}$ 互为反偶，即满足 $\boldsymbol{\omega}=-\frac{1}{2} \boldsymbol{\epsilon}: \boldsymbol{\Omega}$求证：对于任一矢量 $\boldsymbol{u}$ ，必满足 $\boldsymbol{\Omega} \cdot \boldsymbol{u}=\boldsymbol{\omega} \times \boldsymbol{u}$
+\end{problem}
+\begin{solution}
+设 $\boldsymbol{u}$ 的分量为 $u_i$ ，$\boldsymbol{\Omega}$ 的分量为 $\Omega_{i j}$ ，$\boldsymbol{\omega}$ 的分量为 $\omega_i$ 。
+则 $\boldsymbol{\Omega} \cdot \boldsymbol{u}$ 的分量为：
+$$
+(\boldsymbol{\Omega} \cdot \boldsymbol{u})_j = \Omega_{j i} u_i
+$$
+$\boldsymbol{\omega} \times \boldsymbol{u}$ 的分量为
+$$
+(\boldsymbol{\omega} \times \boldsymbol{u})_j = \epsilon_{j i k} \omega_i u_k
+$$
+由于 $\boldsymbol{\omega}=-\frac{1}{2} \boldsymbol{\epsilon}: \boldsymbol{\Omega}$ ，所以
+$$
+\omega_i = -\frac{1}{2} \epsilon_{i j k} \Omega_{j k}
+$$
+因此，
+$$
+(\boldsymbol{\omega} \times \boldsymbol{u})_j = \epsilon_{j i k} \left( -\frac{1}{2} \epsilon_{i l m} \Omega_{l m} \right) u_k = \Omega_{j i} u_i = (\boldsymbol{\Omega} \cdot \boldsymbol{u})_j
+$$
+因此， $\boldsymbol{\Omega} \cdot \boldsymbol{u}=\boldsymbol{\omega} \times \boldsymbol{u}$ 。
+
+\end{solution}
+
+
+
+\end{document}

@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage[margin=2cm]{geometry} % 设置较窄的边距使文档宽一些
+\usepackage{multirow} % 支持表格中的多行单元格
+\usepackage{graphicx} % 用于插入图片
+\usepackage{subcaption} % 支持子标题
+\usepackage{float} % 支持 [H] 浮动体选项
+\title{\heiti\zihao{2} 阴影云纹法测量等高线 }
+\author{\songti  孙振川\quad PB23081463  王晨萱 \quad PB23331860 \\
+课程号  ME2009.01 }
+\date{\today}
+\begin{document}
+    \maketitle
+\begin{abstract}
+    本实验采用阴影云纹法测量物体表面等高线，通过平行光经基准栅投射至试件形成干涉条纹，利用条纹级数与高度的关系式 $h_N = NLp / D$ 计算各点高度。实验器材包括光源、基准栅、试件和数码相机，步骤为布置共面光路、调整至条纹清晰、拍摄多组条纹图并计算高度。实验结果显示不同距离下的条纹图反映表面形貌，测点高度平均值为 $9.904\,\text{mm}$。误差主要源于光路几何配置、光源平行性及光栅稳定性，可通过校准光路、使用平行单色光、固定光栅及优化算法减小。该方法适用于全场非接触测量，可用于离面变形分析（条纹移动量 $\Delta z \approx p/(2\theta)$）。实验加深了对阴影云纹法原理与技术的理解。
+
+oindent{\textbf{关键词：} 阴影云纹法；等高线；条纹级数；高度测量}
+\end{abstract}
+\section{实验目的}
+\begin{enumerate}
+    \item 掌握阴影云纹法测量等高线的原理和技术
+\end{enumerate}
+
+
+
+\section{实验器材}
+\label{sec:equipment}
+    \begin{enumerate}
+        \item 光源
+        \item 基准栅
+        \item 试件 
+        \item 数码相机
+    \end{enumerate} 
+
+\section{实验原理}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img1.png}
+    \caption{实验原理图点照射、点接受阴影莫尔条纹原理 }
+\end{figure}
+
+光源 S 照射基准栅板 M，将栅线投影到被测物体 O 上，形成试件栅。由于物体表面不平，使栅线的影子畸变。当观察点在 C 处时，由于两栅的几何干涉效应可看到物体表面出现明暗相间的条纹。如果 CS 平行于基准栅 M，D、L 远大于物体尺寸，则这些条纹是一些等高线。其距离基准栅的高度由下式确定：
+
+$$
+\mathrm{h}_{\mathrm{N}}=\mathrm{NLp} / \mathrm{D}
+$$
+
+
+因此，只要测量出 $\mathrm{L} 、 \mathrm{p} 、 \mathrm{D}$ ，就可计算出各级数条纹的高度。
+
+\section{实验步骤}
+
+\begin{enumerate}
+    \item 按照原理图布置光路，注意使物体、光源和相机在同一水平面上，基准栅与
+试件最高点相接触。
+    \item 观察等高线图。打开光源，调整光源及相机的角度，使试件表面出现十条左右
+条纹，并且阴影条纹清晰，不受光源反射象的影响。
+    \item 拍摄等高线图。改变光路参数，使试件上特征点处于亮（或暗）条纹的中心，
+但级数不同。拍摄几次。 
+    \item 计算等高线的高度。将数码相机的图象传至微机，打印。在云纹图上确定特征点的条纹级数，注意整数级与半级条纹的判别。计算特征点的高度$h_N$
+\end{enumerate}
+
+\section{测量结果}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img1.jpg}
+    \caption{D=51.32mm 时的条纹图 }
+\end{figure}
+\section{测量结果}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img2.jpg}
+    \caption{D=49.11mm 时的条纹图 }
+\end{figure}
+\section{测量结果}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img3.jpg}
+    \caption{D=46.34mm 时的条纹图 }
+\end{figure}
+
+
+\begin{table}[H]
+\centering
+\caption{各测点应变数据}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline 节距 P（mm） & L（mm） & D（mm） & N & $\mathrm{h}_{\mathrm{n}}(\mathrm{mm})$ & $\mathrm{h}_{\mathrm{n}}(\mathrm{mm})$平均值 \\
+\hline \multirow{3}{*}{0.5} & 74.56& 51.32& 14& 10.189& \multirow{3}{*}{9.904} \\
+\hline &74.56 & 49.11& 13& 9.868& \\
+\hline &74.56 & 46.34& 12& 9.654& \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{预习思考题 }
+\subsection{用阴影云纹法测量高度的最大误差来源是什么？应如何避免？ }
+阴影云纹法测量高度时，\textbf{最大的误差来源是参考光栅与被测表面之间的几何配置误差，尤其是两者不平行所导致的系统误差}。此外，光源的平行性和单色性不足、光栅质量与安装不稳定、以及相位解调算法误差也会影响测量精度。
+
+为减小误差，可采取以下措施：
+\begin{itemize}
+  \item \textbf{保证光路几何精度}：调整参考光栅与被测表面尽量平行，精确校准光源、光栅与相机的相对位置；
+  \item \textbf{使用平行光与单色光源}：采用准直光源（如激光）以减小入射角差异，使用单色光提高条纹对比度；
+  \item \textbf{选用高质量光栅并固定牢固}：避免光栅变形、振动或位移；
+  \item \textbf{优化相位解调算法}：采用多步相移法或傅里叶变换法，并通过标定提高测量精度。
+\end{itemize}
+\subsection{如何利用阴影云纹法测量离面变形？ }
+阴影云纹法可通过记录被测物体在受力或温度等外界因素作用下，\textbf{表面因离面位移（out-of-plane deformation）引起的阴影光栅图案变化}，进而获取离面位移场或变形信息。当物体表面发生垂直于表面的位移（即 $z$ 方向位移）时，阴影与参考光栅之间产生的干涉条纹会发生移动，该条纹移动量与离面位移存在定量关系。
+
+\paragraph{测量方法：}
+\begin{enumerate}
+  \item 布置光路：在物体前方或后方放置已知周期的参考光栅，用平行光从一定角度照射，形成阴影与光栅叠加的云纹图案；
+  \item 记录初始云纹图：未施加变形前，拍摄初始状态的云纹图像；
+  \item 施加变形并记录：对物体施加载荷（如力、热），引起离面变形后，再次拍摄云纹图；
+  \item 分析条纹移动：通过对比变形前后云纹图中条纹的位置变化，计算各点的离面位移。
+\end{enumerate}
+
+\paragraph{定量关系：}
+当物体发生离面位移 $\Delta z$ 时，云纹条纹会相应移动。其关系为：
+\[
+\Delta z \approx \frac{p}{2 \theta}
+\]
+其中：
+\begin{itemize}
+  \item $\Delta z$：离面位移（沿光轴，通常为 $z$ 方向）；
+  \item $p$：光栅节距；
+  \item $\theta$：光源入射光与光栅法线的夹角。
+\end{itemize}
+条纹移动一个周期（即光栅节距 $p$）对应离面位移 $\Delta z = \frac{p}{2 \tan \theta} \approx \frac{p}{2 \theta}$（小角度近似）。
+
+\paragraph{优点与适用：}
+阴影云纹法适用于\textbf{大变形、全场、非接触测量}，对表面状态要求低，常用于\textbf{结构力学实验、热变形、振动分析}等领域。
+
+\end{document}

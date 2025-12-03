@@ -1,0 +1,114 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+
+\title{\textbf{实验力学作业 2}}
+\author{孙振川 \quad PB23081463}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答:}}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记。}}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    从四种不同级别的压力表读出摩天大楼的顶层气压如下表，试给出最终测量结果（最佳值及其不确定度）
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+\hline 压力表 & 精度等级 & 量程 $(\mathrm{kPa})$ & 读数 $(\mathrm{kPa})$ \\
+\hline A & 2.5 & 150 & 85 \\
+\hline B & 2.5 & 300 & 87 \\
+\hline C & 1.6 & 300 & 82 \\
+\hline D & 1.0 & 500 & 83 \\
+\hline
+\end{tabular}  
+\end{center}
+\end{problem}
+
+\begin{solution}
+    设各压力表的读数分别为 $x_1, x_2, x_3, x_4$，则它们的标准不确定度分别为
+    $$u(x_1)=2.5 \% \times 150=3.75 \mathrm{kPa}$$
+    $$u(x_2)=2.5 \% \times 300=7.5 \mathrm{kPa}$$
+    $$u(x_3)=1.6 \% \times 300=4.8 \mathrm{kPa}$$
+    $$u(x_4)=1.0 \% \times 500=5 \mathrm{kPa}$$
+    各压力表的权值分别为
+    $$w_1=\frac{1}{u^2(x_1)}=\frac{1}{3.75^2}=0.0711 \mathrm{kPa}^{-2}$$
+    $$w_2=\frac{1}{u^2(x_2)}=\frac{1}{7.5^2}=0.0178 \mathrm{kPa}^{-2}$$
+    $$w_3=\frac{1}{u^2(x_3)}=\frac{1}{4.8^2}=0.0434 \mathrm{kPa}^{-2}$$
+    $$w_4=\frac{1}{u^2(x_4)}=\frac{1}{5^2}=0.04 \mathrm{kPa}^{-2}$$
+    以上权值归一化后为
+    $$\tilde{w_1}=\frac{w_1}{\sum_{i=1}^4 w_i}=\frac{0.0711}{0.1723}=0.4129$$
+    $$\tilde{w_2}=\frac{w_2}{\sum_{i=1}^4 w_i}=\frac{0.0178}{0.1723}=0.1033$$
+    $$\tilde{w_3}=\frac{w_3}{\sum_{i=1}^4 w_i}=\frac{0.0434}{0.1723}=0.2519$$
+    $$\tilde{w_4}=\frac{w_4}{\sum_{i=1}^4 w_i}=\frac{0.04}{0.1723}=0.2320$$
+    所以最终测量结果为
+    $$\bar{x}=\sum_{i=1}^4 \tilde{w_i} x_i=0.4129 \times 85+0.1033 \times 87+0.2519 \times 82+0.2320 \times 83=84.07 \mathrm{kPa}$$
+    $$u(\bar{x})=\sqrt{\frac{1}{\sum_{i=1}^4 w_i}}=\sqrt{\frac{1}{0.1723}}=2.41 \mathrm{kPa}$$
+    取 $k=1$ ，则最终测量结果为
+    $$\bar{x} \pm \Delta x=84.07 \pm 2.41 \mathrm{kPa}$$
+\end{solution}
+
+\begin{problem}
+对某一轴径进行等精密度测量 9 次，得到下表数据。请按规范程序处理测量结果，包括：（1）求最佳值和标准误差，（2）分别以 Malikov 和 Abbe－Helmert 准则判断有无系统误差（按数据列顺序），（3）以 Grubbs 准则（危险率 $1 \%$ ）判断有无粗大误差，有则剔除，（4）写出测量结果最佳值及其不确定度（不确定度以极限误差表达，不必修正系差）。
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline 序号 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+\hline $\mathrm{~L} / \mathrm{mm}$ & 24.774 & 24.778 & 24.771 & 24.780 & 24.772 & 24.777 & 24.773 & 24.775 & 24.774 \\
+\hline
+\end{tabular}
+\end{center}
+\end{problem}
+
+\begin{solution}
+    \subsection{最佳值和标准误差}
+    设测量值为 $x_i(i=1,2, \ldots, 9)$ ，则最佳值为
+    \begin{align*}
+    \bar{x} &= \frac{1}{9} \sum_{i=1}^9 x_i \\
+        &= \frac{24.774+24.778+24.771+24.780+24.772+24.777+24.773+24.775+24.774}{9}\\
+        &=24.775~\mathrm{mm}
+    \end{align*}
+    标准误差为
+    \begin{align*}
+    s(\bar{x}) &= \sqrt{\frac{\sum_{i=1}^9\left(x_i-\bar{x}\right)^2}{9(9-1)}} \\
+           &=0.0029~\mathrm{mm}
+    \end{align*}  
+    \subsection{Malikov 和 Abbe－Helmert 准则判断有无系统误差}
+    Malikov 准则：$$
+D=\sum_{i=1}^{\frac{n-1}{2}} d_i-\sum_{i=\frac{n+3}{2}}^n d_i=0.004~\mathrm{mm}<0.0065~\mathrm{mm}
+$$
+    Abbe－Helmert 准则：
+    $$
+\left|\sum_{i=1}^{n-1}\left(d_i \cdot d_{i+1}\right)\right|=6 \times 10^{-5} \mathrm{~mm}^2<\sqrt{n-1} \cdot \sigma^2=0.000076 \mathrm{~mm}^2
+$$
+    所以无系统误差。
+    \subsection{Grubbs 准则判断有无粗大误差}
+    计算 $G_1=\frac{\left|x_i-\bar{x}\right|_{max}}{s(\bar{x})}=\frac{0.005}{0.0029}=1.724<G_{\text {critical }}=2.32$ ，所以无粗大误差。
+    \subsection{测量结果最佳值及其不确定度}
+    取极限误差为$3s$ ，则测量结果为
+    $$\bar{x} \pm \Delta x=24.775 \pm 0.0087 \mathrm{~mm}$$
+
+\end{solution}
+
+\begin{problem}
+以下面关系式测定金属电导率 $\gamma=\frac{4 l}{\pi d^2 R}$ ，其中，$l$ 是导线长度，$R$ 是导线的电阻，$d$ 是导线直径，试问在怎样的测量条件下才能保证 $\gamma$ 有较小的测量误差？设 $\frac{\sigma_l}{l} 、 \frac{\sigma_d}{d} 、 \frac{\sigma_R}{R}$ 近似相等，分析 $l、d、R$ 中哪个值的误差对结果影响最大，从而测量得更准确？（提示：用 $\sigma_\gamma / \gamma$ 的表达式来分析）
+\end{problem}
+\begin{solution}
+
+    由误差传递公式可知
+    $$\frac{\sigma_\gamma}{\gamma}=\sqrt{\left(\frac{\partial \gamma}{\partial l} \frac{\sigma_l}{\gamma}\right)^2+\left(\frac{\partial \gamma}{\partial d} \frac{\sigma_d}{\gamma}\right)^2+\left(\frac{\partial \gamma}{\partial R} \frac{\sigma_R}{\gamma}\right)^2}$$
+    计算各偏导数
+    $$\frac{\partial \gamma}{\partial l}=\frac{4}{\pi d^2 R}$$
+    $$\frac{\partial \gamma}{\partial d}=-\frac{8 l}{\pi d^3 R}$$
+    $$\frac{\partial \gamma}{\partial R}=-\frac{4 l}{\pi d^2 R^2}$$
+    所以
+    $$\frac{\sigma_\gamma}{\gamma}=\sqrt{\left(\frac{\sigma_l}{l}\right)^2+\left(-2 \cdot \frac{\sigma_d}{d}\right)^2+\left(-1 \cdot \frac{\sigma_R}{R}\right)^2}$$
+    设 $\frac{\sigma_l}{l} 、 \frac{\sigma_d}{d} 、 \frac{\sigma_R}{R}$ 近似相等为 $k$ ，则
+    $$\frac{\sigma_\gamma}{\gamma}=\sqrt{1^2+(-2)^2+(-1)^2} k=\sqrt{6} k$$
+    可见，$d$ 的误差对结果影响最大，所以应尽量减小 $d$ 的测量误差。
+
+\end{solution}
+\end{document}

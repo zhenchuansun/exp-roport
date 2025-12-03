@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage[margin=2cm]{geometry} % 设置较窄的边距使文档宽一些
+\usepackage{multirow} % 支持表格中的多行单元格
+\usepackage{graphicx} % 用于插入图片
+\usepackage{subcaption} % 支持子标题
+\usepackage{float} % 支持 [H] 浮动体选项
+\title{\heiti\zihao{2} 动态应变、动态加速度测量  }
+\author{\songti  孙振川\quad PB23081463  王晨萱 \quad PB23331860 \\
+课程号  ME2009.01 }
+\date{\today}
+\begin{document}
+    \maketitle
+\begin{abstract}
+   
+    通过本次实验，学习了动态应变测量的基本方法，掌握了 DH5922D 动态信号测试分析系统的使用，并熟练掌握了用 DH5922D 动态信号测试分析系统采集动态应变信号的方法。实验中通过扫频信号源激振简支梁，利用应变片测量了梁在不同位置的动态应变信号，并记录了各测点的周期、频率及峰峰值。实验结果显示，各通道应变波形的相位相同，但最大值不同，反映了不同位置的受力情况。通过本次实验，加深了对动态应变测量原理和方法的理解，提高了实际操作能力。
+    
+    \noindent{\textbf{关键词： } 动态应变测量；DH5922D 动态信号测试分析系统}
+\end{abstract}
+\section{实验目的}
+\begin{enumerate}
+    \item 学习动态应变测量的基本方法；
+    \item 掌握 DH5922D 动态信号测试分析系统的使用；
+    \item 熟练掌握用 DH5922D 动态信号测试分析系统采集动态应变信号。
+    
+\end{enumerate}
+
+
+
+\section{实验器材}
+\label{sec:equipment}
+    \begin{enumerate}
+        \item DH1301 扫频信号源 
+        \item DH5922D 四通道动态信号测试分析系统 
+        \item 简支梁 
+        \item 激振器
+        \item IEPE 压电式加速度传感器
+        \item 电脑及采集软件 
+    \end{enumerate} 
+
+\section{实验原理}
+\subsection{ 实验装置 }
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img1.png}
+    \caption{测量动态应变和加速度的实验装置示意图 }
+    \label{fig:star_connection_circuit}
+\end{figure}
+\subsection{ 应变实验原理 }
+扫频信号源输出频率可连续变化的正弦信号至激振器，激振器产生正弦激振力
+给简支梁加载，梁发生振动即产生动态的应变信号。贴于梁上的应变片与应变信号
+输入线组成应变电桥，将应变信号输入线接入数据采集仪的接口，启动采集软件，
+采集动态应变信号。
+\subsection{ 加速度实验原理 }
+扫频信号源输出频率可连续变化的正弦信号至激振器，激振器产生正弦激振力
+给简支梁加载。梁发生振动即产生动态的加速度。IEPE 压电式加速度传感器受振动
+产生加速度信号（IEPE 加速度传感器输出的是电压量），数据采集系统采集记录动
+态加速度信号，供精确测量。
+\subsection{ 加速度实验标定  }
+数采系统采集的加速度是电压值（单位：V），要得到被测量的物理量（加速度
+单位：m/s²），必须进行标定。可根据加 IEPE 加速度传感器的编号，在产品合格证上
+找到其轴向灵敏度，在通道参数设置时填入其灵敏度即可。 
+\section{实验内容}
+\subsection{接桥：}
+在简支梁上分别选取 3 个工作片，接电桥，桥路可选择 1/4 桥接法
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img3.png}
+    \caption{电路接桥示意图 }
+\end{figure}
+
+\subsection{动态应变测量：}
+\begin{enumerate}
+    \item 将应变信号输入线接数据采集仪的通道接口
+    \item 打开 DH5922D 数据采集仪的电源开关，等采集仪的等待指示灯熄灭后，打开数
+据采集软件
+    \item 在采集软件中依次进行新建文件夹、通道参数设置、存储规则设置，测量设置（注
+意：通道一定要进行平衡清零，选择合适的采样率）
+    \item 扫频信号源的功率输出接激振器，打开信号源的电源开关，将扫频信号源的
+输出电压调至 1.5V 左右，扫频信号源的的频率调置 130HZ 左右，对简支梁进行激
+振。
+    \item 微调扫频信号源的频率，使屏幕上出现稳定、幅度适中的动态应变波形，采
+集动态应变信号并记录动态应变信号的周期、频率及峰峰值，将动态应变信号截图
+保存
+\end{enumerate}
+
+\section{测量结果}
+
+\begin{table}[H]
+\centering
+\caption{各测点应变数据}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 通道 & 应变片位置 & 周期（ms） & 频率（Hz） & 应变峰峰值（ $\mu \varepsilon$ ） \\
+\hline CH2 &偏上 1/4 处 &9.54 & 104.82&7.925 \\
+\hline CH3 &正上方 &9.52 & 105.04& 15.989\\
+\hline CH4 & 正下方&9.50 & 105.26& 15.671\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{预习思考题 }
+\subsection{分析各通道的应变波形，各通道应变波形的相位、最大值之间的相互关系如何？为什么？  }
+各通道应变波形的相位相同，最大值不同。因为各应变片位置不同，受力情况不同，导致测得的应变峰峰值不同。
+
+
+\subsection{ 画图表示梁横截面上弯曲正应力的分布规律。}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img4.png}
+    \caption{梁横截面上弯曲正应力的分布规律示意图 }
+\end{figure}
+
+
+\subsection{ 加速度信号的频率与激振信号的频率有什么关系？}
+加速度信号的频率与激振信号的频率相同。
+
+
+\end{document}

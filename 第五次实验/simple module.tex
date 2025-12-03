@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage[margin=2cm]{geometry} % 设置较窄的边距使文档宽一些
+\usepackage{multirow} % 支持表格中的多行单元格
+\usepackage{graphicx} % 用于插入图片
+\usepackage{subcaption} % 支持子标题
+\usepackage{float} % 支持 [H] 浮动体选项
+\title{\heiti\zihao{2} 二维云纹干涉实验  }
+\author{\songti  孙振川\quad PB23081463  王晨萱 \quad PB23331860 \\
+课程号  ME2009.01 }
+\date{\today}
+\begin{document}
+    \maketitle
+\begin{abstract} 
+本文介绍了二维云纹干涉实验的原理、器材、光路布置
+及实验步骤。通过该实验，了解了高灵敏栅的衍射现象和高密度云纹干涉测量的基本原理，掌握了云纹干涉光路的布置及调试方法。实验结果展示了二维云纹干涉系统的光路图以及应变和位移的测量结果。
+
+\noindent{\textbf{关键词： } 二维云纹干涉；高灵敏栅；衍射现象；光路布置；应变测量；位移测量}
+\end{abstract}
+\section{实验目的}
+\begin{enumerate}
+    \item 了解高灵敏栅的衍射现象 
+    \item 了解高密度云纹干涉测量的基本原理
+    \item 掌握云纹干涉光路布置及调试方法
+\end{enumerate}
+
+
+
+\section{实验器材}
+\label{sec:equipment}
+    \begin{enumerate}
+        \item 电源及激光器 1 套，
+        \item 单模光纤耦合器 1 套，包括扩束镜及准直光非球面镜
+        \item 光学主体箱 1 套：包括三维云纹干涉的反射镜系统及输出全反射镜
+        \item 六维调节架和加载架 1 套
+        \item  条纹观察器：其前端有透镜（可旋开），后端有成像毛玻璃
+        \item 条纹采集器：由 CCD 相机完成，CCD 镜头为 10X 变焦 
+        \item 电脑及软件 
+    \end{enumerate} 
+
+\section{实验原理}
+经典的云纹法与云纹干涉法条纹形成的机理不同，经典云纹法是利用了低频 
+栅线的几何干涉，而云纹干涉法是利用了光波的干涉与高频光栅的衍射。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img5.png}
+    \caption{干涉区域示意图} 
+\end{figure}
+两束相干的准直光在空中汇交，在它们汇交的空间区域内会形成一个干涉区，
+如图 1 所示，在干涉区内产生相长干涉和相消干涉，从而构成一系列明暗相 
+间的平行平面。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img6.png}
+    \caption{干涉现象示意图} 
+\end{figure}
+
+图 2 可以帮助我们认识这一干涉现象，该图表明了两列相干光波在给定时刻的情形，两个波列分别沿 Z 轴方向成 $\pm \boldsymbol{\alpha}$ 角的方向入射，图中垂直于波列传播方向的细实线代表波前，标有 A1 或 A2 的箭头代表波的振幅，光波的位相变化由正弦曲线表示，两个等位相面间的距离是波长 $\lambda$ 。从图中可以看出沿 $\mathrm{a}-\mathrm{b}, \mathrm{c}-\mathrm{d}$ 及 e－f 这些平行线都是两波波峰的交点，在这些线上两波形成相长干涉，而图中虚线都是波峰与波谷上相交的点形成的相消干涉线。由此在空间干涉区内形成一系列明暗相间的平行平面，相长干涉对应着亮平面，相消干涉对应着暗平面，相邻亮平面（或暗平面）的间距 p 可以从图中三角形几何关系得到
+
+$$
+P=\lambda / 2 \sin \alpha
+$$
+
+
+我们如果将全息干板（或涂有感光材料的软片）沿图 1 中的 B－B 线（或 C－C 线）并垂直于纸面的方向置入这个干涉区内曝光，经显影定影后就会在干板上形成一系列明暗相间的条纹，这些条纹的频率 f（或间距 p）与两波夹角 $\alpha$ 、光波波长 $\lambda$ 及干板的位置有关，位于 $\mathrm{B}-\mathrm{B}$ 位置时 $1 / f=p=\lambda /$（ $2 \sin \alpha$ ），当位于 $\mathrm{C}-\mathrm{C}$ 位置时 $1 / f=p=\lambda /(2 \sin \alpha \cos \beta)$ 。这就是利用双束相干准直光在干板表面形成的全息光栅。
+
+光栅是由一系列有规律间隔的＂条纹＂组成。当一束光照到一个光栅上时，光栅会把入射光波分成一系列强度较小的光波，这一系列光波被称为衍射波，它们按照各自的衍射角射出，二维衍射现象可由图 3 来描述，各级衍射波的衍射角可由二维光栅方程确定。
+
+$$
+p(\sin \theta_n +sin \alpha_o)=nλ (2) 
+$$
+
+
+其中，p 为栅距，$\theta_n$ 为第 n 级衍射角，$\alpha_o$ 为入射角，$\lambda$ 为波长，该方程对反射光栅同样适用。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img7.png}
+    \caption{二维衍射现象} 
+\end{figure}
+云纹干涉法需要在试件表面制出频率为 $f / 2$ 的高频光栅（又称试件栅），当试件变形时，试件栅随试件一同变形。已知 $f=2 \sin \boldsymbol{\alpha} / \boldsymbol{\lambda}$ ，如两束相干准直光分别以入射角 $\pm \alpha$ 照射试件，如图 4 所示，在试件表面形成频率为 f 的虚光栅，当虚光栅与试件栅完全平行并且栅频是试件栅的两倍时，A 光束被试件栅衍射后，其 +1 级衍射沿 $\theta=0$ 的方向出射，光束 $B$ 的一 1 级衍射也沿 $\theta=0$ 的方向出射，这两束衍射光也是相干光，它们相交后的交角为零，两束光干涉后在全场形成均匀光场，得到一幅空白场（0 条纹／毫米）。当试件受力产生变形时，试件栅的频率发生变化，按照光栅方程，A 光束的 +1 级衍射波与 B 光束的一 1 级衍射波的出射方向发生变化，这两束光在空中以一定的交角汇交，再次出现干涉条纹，这就是可用肉眼观察到的＂干涉＂云纹图。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img8.png}
+    \caption{干涉云纹图的形成} 
+\end{figure}
+
+也可以用波前干涉理论解释云纹干涉法的云纹条纹形成原理，平面波前（图 4 中的 $A^{\prime}, ~ B^{\prime}$ ）干涉后得到的是均匀场，即零条纹场，而翘曲波前（图 4 中的 $A^{\prime \prime}$ B＂）干涉后形成的是干涉云纹图。大多数情况下，试件承受的是非均匀变形，这使试件栅局部频率在全场范围内以连续函数的形式逐点变化，于是各点的 $\pm 1$ 级衍射也将连续变化，从而生成图中 $\mathrm{A} "$ ， $\mathrm{B} "$ 所示的略有翘曲的波阵面，相机将这两束光汇聚起来成像得到干涉云纹图，该图以位移等值线的形式给出了试件表面各点的面内位移值，对于条纹图中的每一点可以定量的给出。
+
+$$
+\begin{aligned}
+\mu & =\mathrm{N} x / f(3) \\
+\mathrm{v} & =\mathrm{N} y / f(4)
+\end{aligned}
+$$
+
+
+其中，$\mu, \mathrm{U}$ 分别为该点的 x 和 y 方向的位移分量， $\mathrm{Nx}, \mathrm{Ny}$ 分别为该点的 u，v 云纹干涉图中的条纹级数；f 为参考栅频率。
+
+综上所述，云纹干涉法的基本原理是：在试件表面制有可随试件变形的高频试件栅，用两束准直光以一定的角度照射试件栅，由试件栅产生的衍射波相互干涉，得到反映试件（物体）表面位移信息的干涉图。
+
+\section{光路及系统特点}
+二维云纹干涉系统的光路（U 场及 V 场）见图 5。 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img9.png}
+    \caption{二维云纹干涉系统光路图} 
+\end{figure}
+
+激光经过扩束镜及非球面镜形成高质量的准直光，再经二维云纹反射系统，其中准直光 A1 经过反射镜 M1＇反射到 M1 再照射到试件栅上。同样准直光 A2 经反射镜 M2＇和 M2 的反射也照射到试件栅上。这两束特定角度照射的光所形成的虚栅的频率正好是试件栅频率的一倍，当试件栅受载变形后，与虚栅相干涉形成云纹（MOIRE）干涉条纹，这一干涉条纹正好反映试件的变形，经输出反射镜在屏幕上可以看到反映试件在水平方向（U 场）变形的云纹条纹。同样 B1 和 B2 两部份准直光，经该反射系统垂直方向的反射镜，照射在试件栅上，试件 5 受载后，经输出反射镜 6 在屏幕 7 上观察到反映垂直方向（ $V$ 场）变形的云纹干涉条纹。系统中有一转动挡板，当同时挡住 B1 和 B2 时可以看到 U 方向的云纹条纹。当挡住 A1 和 A2 时，可以看到 V 场云纹干涉条纹。
+
+$W$ 场的光路：
+一束光是直接进入相机或屏幕，另一束光是垂直照到试件上。
+系统的特点：
+
+1．采用非球面镜可以得到高质量的准直光；
+
+2．试件可以六维调节（沿 $\mathrm{X}, \mathrm{Y}, \mathrm{Z}$ 轴平移或者绕 $\mathrm{X}, \mathrm{Y}, \mathrm{Z}$ 轴转动），为试件栅精确定位。
+
+3．单模光纤耦合器可保证光路系统的精准和稳定。
+
+4．方便 $U$ 场、 $V$ 场和 $W$ 场的切换和观察。
+\section{实验步骤}
+
+\begin{enumerate}
+    \item 按照原理图布置光路，注意使物体、光源和相机在同一水平面上，基准栅与
+试件最高点相接触。
+    \item 观察等高线图。打开光源，调整光源及相机的角度，使试件表面出现十条左右
+条纹，并且阴影条纹清晰，不受光源反射象的影响。
+    \item 拍摄等高线图。改变光路参数，使试件上特征点处于亮（或暗）条纹的中心，
+但级数不同。拍摄几次。 
+    \item 计算等高线的高度。将数码相机的图象传至微机，打印。在云纹图上确定特征点的条纹级数，注意整数级与半级条纹的判别。计算特征点的高度$h_N$
+\end{enumerate}
+
+\section{测量结果}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img3.png}
+    \caption{电压为20V时 V场的位移条纹} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img2.png}
+    \caption{电压为21.4V时V场的位移条纹} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img4.png}
+    \caption{电压为22.8时V场的位移条纹} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img1.png}
+    \caption{电压为24.2时V场的位移条纹} 
+\end{figure}
+%好像有很大问题
+步长电压为 1.4V
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img1.jpg}
+    \caption{应变} 
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img2.jpg}
+    \caption{位移} 
+\end{figure}
+
+\end{document}

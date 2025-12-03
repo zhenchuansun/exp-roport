@@ -1,0 +1,106 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{multirow}
+\usepackage{graphicx,wrapfig}
+\title{\textbf{实验力学作业 3}}
+\author{孙振川 \quad PB23081463}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答:}}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记。}}{\par}
+
+\begin{document}
+
+\maketitle
+\begin{problem}
+标定一个位移传感器，在 $0 \sim 5 \mathrm{~mm}$ 的测量范围内进行三个循环的测量，测量数据如下表，请给出该传感器的线性度（端点连线拟合直线）、灵敏度、最大滞环率和重复性误差。
+\\
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline \multicolumn{2}{|l|}{输入（mm）} & 0.0 & 1.0 & 2.0 & 3.0 & 4.0 & 5.0 \\
+\hline \multirow{6}{*}{输出（mV）} & 增序 & 0.0 & 4.3 & 9.2 & 14.4 & 20.6 & 25.0 \\
+\hline & 减序 & 0.0 & 5.4 & 10.1 & 16.0 & 21.5 & 25.0 \\
+\hline & 增序 & 0.0 & 5.0 & 9.8 & 15.1 & 19.8 & 25.0 \\
+\hline & 减序 & 0.0 & 5.2 & 11.0 & 16.3 & 20.9 & 25.0 \\
+\hline & 增序 & 0.0 & 5.1 & 10.2 & 15.3 & 20.5 & 25.0 \\
+\hline & 减序 & 0.0 & 5.3 & 11.2 & 16.4 & 21.2 & 25.0 \\
+\hline
+\end{tabular}
+\end{center}
+\end{problem}
+
+\begin{solution}
+(1) 线性度计算如下：
+\[\delta_L=\frac{\Delta_{\max }}{Y_{\mathrm{FS}}} \times 100 \%=\frac{1.5 \mathrm{~mV}}{25.0 \mathrm{~mV}} \times 100 \%=6 \%\]
+(2) 灵敏度计算如下：
+\[S=\frac{Y_{\mathrm{FS}}}{X_{\mathrm{FS}}}=\frac{25.0 \mathrm{~mV}}{5.0 \mathrm{~mm}}=5.0 \mathrm{~mV} / \mathrm{mm}\]
+(3) 最大滞环率计算如下：
+\[\delta_H=\frac{\Delta H_{\max }}{Y_{\mathrm{FS}}} \times 100 \%=\frac{1.6 \mathrm{~mV}}{25.0 \mathrm{~mV}} \times 100 \%=6.4 \%\]
+(4) 重复性误差计算如下：
+取各输入值对应的输出值的最大差值 $\Delta R_{\max }$ ，则有 $\Delta R_{\max }=\left\{10.1,11.0,11.2\right\} \text{的标准差}=0.586\mathrm{~mV}$ ，因此重复性误差为：
+\[\delta_R=\frac{\Delta R}{Y_{\mathrm{FS}}} \times 100 \%=\frac{3 \time 0.586 \mathrm{~mV}}{25.0 \mathrm{~mV}} \times 100 \%=7.0 \%\]
+
+\end{solution}
+\newpage
+\begin{problem}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.17\textwidth]{q2.png}
+    %\caption{多池串联}\label{多池串联}
+\end{wrapfigure}
+水银温度计如图：玻璃毛细管的内径 $\phi=0.2 \mathrm{~mm}$ ，内部封装 $V=0.1 \mathrm{ml}$ 的水银；水银的密度 $\rho=13.5 \mathrm{~g} / \mathrm{cm}^3$ 、比热容 $c=140 \mathrm{~J} /(\mathrm{kg} \cdot \mathrm{K})$ 、体积膨胀系数 $\alpha= 0.18 \% / K$ ；水银泡的传热表面积 $A=1.0 \mathrm{~cm}^2$ ，在充分接触下的表面传热系数 $h=20 \mathrm{~W} /\left(\mathrm{m}^2 \cdot \mathrm{~K}\right)$ 。问：
+
+（1）该温度计的灵敏度是多少？（升高一度毛细管水银柱长度变化多少）； 
+
+（2）设温度计初始温度为 $T$ ，将其快速置入温度为 $T_a$的恒温水浴中，其动态响应的时间常数是多少？至少需要等待多少分钟读数才能保证动态误差小于初始温差的 $2 \%$ ？
+
+注：表面传热系数有 $h=\frac{Q}{\Delta T \cdot A}=\frac{\mathrm{d} U / \mathrm{d} t}{\Delta T \cdot A}=\frac{\rho V c \cdot(\mathrm{~d} T / \mathrm{d} t)}{\left(T_a-T\right) \cdot A}$
+
+
+
+\end{problem}
+
+
+\begin{solution}
+(1) 灵敏度计算如下：
+\[S=\frac{\mathrm{d} l}{\mathrm{d} T}=\frac{\mathrm{d} V}{\mathrm{d} T} \cdot \frac{1}{A_c}=\alpha V \cdot \frac{4}{\pi \phi^2}=0.18 \% / K \cdot 0.1 \mathrm{ml} \cdot \frac{4}{\pi(0.2 \mathrm{~mm})^2}=5.73 \mathrm{~mm} / K\]
+(2) 时间常数计算如下：
+$$
+\frac{\mathrm{d} T}{\mathrm{d} t} =\frac{h A}{\rho V c}\left(T_a-T\right)
+$$
+\[\tau=\frac{\rho V c}{h A}=\frac{13.5 \mathrm{~g} / \mathrm{cm}^3 \cdot 0.1 \mathrm{ml} \cdot 140 \mathrm{~J} /(\mathrm{kg} \cdot \mathrm{K})}{20 \mathrm{~W} /\left(\mathrm{m}^2 \cdot \mathrm{~K}\right) \cdot 1.0 \mathrm{~cm}^2}=0.945 \mathrm{~s}\]
+动态误差小于初始温差的 $2 \%$ 所需时间计算如下：
+\[t \geq -\tau \ln 0.02=4.56 \mathrm{~s}\]
+\end{solution}
+\newpage
+
+
+\begin{problem}
+某压电式压力传感器属于二阶系统，其固有频率为 $1 M H z$ ，阻尼比为 0.65。问：
+
+（1）当测量阶跃压力时，该传感器的延迟时间、上升时间（ $5 \% \sim 95 \%$ ）与响应时间（与稳定值的相对误差小于 $3 \%$ ）分别是多少？超调和衰减比分别是多少？
+
+（2）当测量简谐压力波时，其谐振频率和最大振幅误差分别是多少？当谐振压力波频率为 0.5 MHz 时，其幅值误差和相位误差分别是多少？
+\end{problem}
+\begin{solution}
+(1) 延迟时间、上升时间与响应时间（2\%）计算如下：
+\[t_d=\frac{1+0.7\zeta}{\omega_n}=\frac{1+0.7\times 0.65}{1 M H z}=1.455 \mu s\]
+\[t_r=\frac{\pi-\theta}{\omega_d}=\frac{\pi-\arccos 0.65}{0.76 M H z}=1.5 \mu s\]
+\[t_s=\frac{4}{\zeta \omega_n}=\frac{4}{0.65 \times 1 M H z}=6.15 \mu s\]
+超调和衰减比分别计算如下：
+\[M_p=e^{-\frac{\zeta \pi}{\sqrt{1-\zeta^2}}}=e^{-\frac{0.65 \pi}{\sqrt{1-0.65^2}}}=0.163\]
+\[S=\frac{1}{\sqrt{1-\zeta^2}}=\frac{1}{\sqrt{1-0.65^2}}=1.32\]
+(2) 谐振频率和最大振幅误差计算如下：
+\[\omega_r=\omega_n \sqrt{1-2 \zeta^2}=1 M H z \sqrt{1-2 \times 0.65^2}=0.66 M H z\]
+\[M_r=\frac{1}{2 \zeta \sqrt{1-\zeta^2}}=\frac{1}{2 \times 0.65 \sqrt{1-0.65^2}}=1.02\]
+当谐振压力波频率为 0.5 MHz 时，幅值误差和相位误差计算如下：
+\[\frac{A_0}{A_i}=\frac{1}{\sqrt{\left(1-\left(\frac{\omega}{\omega_n}\right)^2\right)^2+\left(2 \zeta \frac{\omega}{\omega_n}\right)^2}}=\frac{1}{\sqrt{\left(1-\left(\frac{0.5 M H z}{1 M H z}\right)^2\right)^2+\left(2 \times 0.65 \times \frac{0.5 M H z}{1 M H z}\right)^2}}=1.09\]
+\[\phi=-\arctan \frac{2 \zeta \frac{\omega}{\omega_n}}{1-\left(\frac{\omega}{\omega_n}\right)^2}=-\arctan \frac{2 \times 0.65 \times \frac{0.5 M H z}{1 M H z}}{1-\left(\frac{0.5 M H z}{1 M H z}\right)^2}=-40.4^{\circ}\]
+\end{solution}
+
+\end{document}

@@ -1,0 +1,469 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+
+\title{\textbf{实验力学作业 1}}
+\author{孙振川 \quad PB23081463}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答:}}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记。}}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    用小球从空中降落到水中的实验模拟返回舱降落到海里的现象。用相似理论求出实验需要满足的相似参数。如果已知返回舱的质量 $m_1$ 、直径 $d_1$ 、入水速度 $v_1$ 、入水深度 $h_1$ 、海水密度 $\rho_1$ 、海水动力粘度 $\mu_1$ ；实验用水的密度 $\rho_2$ 和动力粘度 $\mu_2$ 。试确定实验小球的直径 $d_2$ 、质量 $m_2$ 、入水速度 $v_2$ 和入水深度 $h_2$ 。
+\end{problem}
+
+\begin{solution}
+    \\
+    量纲矩阵:\\
+    \begin{center}
+        \begin{tabular}{cccccccc}
+            \hline
+            & $m$ & $d$ & $v$ & $h$ & $\rho$ & $\mu$ & $g$ \\
+            \hline
+            L & 0 & 1 & 1 & 1 & -3 & -1 & 1 \\
+            M & 1 & 0 & 0 & 0 & 1  & 1  & 0 \\
+            T & 0 & 0 & -1 & 0 & 0  & -1 & -2 \\
+            \hline
+        \end{tabular}
+    \end{center}   选取重复变量 $m$ 、 $d$ 、 $v$，它们的量纲行列式为
+    $$
+    \left|\begin{array}{ccc}
+        0 & 1 & 1 \\
+        1 & 0 & 0 \\
+        0 & 0 & -1
+    \end{array}\right|=1 \neq 0
+    $$
+    所以它们是线性无关的，可以作为重复变量。\\
+    由相似理论可知，实验需要满足的相似参数为
+    $$\pi_1=\frac{h}{d},  \quad \pi_2=\frac{m}{\rho
+d^3},\quad \pi_3=\frac{m v }{\mu d^2}, \quad \pi_4=\frac{g d}{v^2}$$
+    由相似参数的相等性可得
+    $$\frac{h_1}{d_1}=\frac{h_2}{d_2}, \quad  \frac{m_1}{\rho_1 d_1^3}=\frac{m_2}{\rho_2 d_2^3}, \quad \frac{m_1 v_1}{\mu_1 d_1^2}=\frac{m_2 v_2}{\mu_2 d_2^2}, \quad \frac{g d_1}{v_1^2}=\frac{g d_2}{v_2^2}$$
+    联立以上四个方程，
+    可解得
+    $$d_2=d_1 \left(\frac{\rho_1\mu_2}{\rho_2 \mu_1}\right)^{\frac{2}{3}}, \quad h_2=h_1\left(\frac{\rho_1\mu_2}{\rho_2 \mu_1}\right)^{\frac{2}{3}}, \quad m_2=m_1 \frac{\rho_1}{\rho_2}\frac{\mu_2^2}{\mu_1^2}, \quad v_2=v_1 \left(\frac{\rho_1\mu_2}{\rho_2 \mu_1}\right)^{\frac{1}{3}}$$
+\end{solution}
+
+\begin{problem}
+   在拖曳水槽（淡水）中进行海船航行的模型实验。真实船长度为 130 m、浸水面积 $2400 \mathrm{~m}^2$ ；模型船长度为 4.2 m。设水流对船的摩擦阻力 $D$ 与航行速度 $v$ 满足关系 $D=k \cdot v^n$ ，其中 $k$ 为系数，$n$ 为速度指数。已知真实船在海水中以 $3 \mathrm{~m} / \mathrm{s}$ 速度航行时单位面积摩擦阻力是 $43 \mathrm{~N} / \mathrm{m}^2$ ，速度指数为 1.85；模型船在淡水中以 $3 \mathrm{~m} / \mathrm{s}$ 速度航行时单位面积摩擦阻力是 $16 \mathrm{~N} / \mathrm{m}^2$ ，速度指数为 1.9。问：在相似条件下，当模型船以 $1.5 \mathrm{~m} / \mathrm{s}$ 的速度拖行实验时，测得总阻力为 17.75 N，（1）对应真实船在海水中的航行速度是多少？（2）在该速度下，真实船航行需要的轴功率是多少？（设推进效率为 $70 \%$ ，海水密度为 $1025 \mathrm{~kg} / \mathrm{m}^3$ ）
+\end{problem}
+
+\begin{solution}
+\subsection{摩擦阻力系数}
+ 根据几何相似，$\frac{S_m}{S_s}=\left(\frac{L_m}{L_s}\right)^2$，所以
+    $$
+S_m=S_s \cdot\left(\frac{L_m}{L_s}\right)^2=2400 \times\left(\frac{4.2}{130}\right)^2  \approx 10.42 \mathrm{~m}^2
+    $$ 
+  $$
+  k_s \approx13520  \mathrm{~N} \cdot(\mathrm{m} / \mathrm{s})^{-1.85} 
+    $$
+      $$
+  k_m \approx 4.95 \mathrm{~N} \cdot(\mathrm{m} / \mathrm{s})^{-1.9} \\
+  $$
+
+总阻力由摩擦阻力 $D$ 和剩余阻力 $R_{\text {rem }}$ 组成。
+
+$$
+R_{\text {total }}=D+R
+$$
+摩擦阻力$ D_m=k_m \cdot v_m^{n_m}=4.95 \times(1.5)^{1.9} \approx  10.296\mathrm{~N}$
+
+剩余阻力$R_m=R_m-D_m=17.75-10.296=7.454 \mathrm{~N}$
+
+\subsection{无量纲数}
+    量纲矩阵:\\
+    \begin{center}
+        \begin{tabular}{ccccccc}
+            \hline
+            & $L$ & $S$ & $v$ & $D$ & $\rho$ & $g$ \\
+            \hline
+            L & 1 & 2 & 1 & 1 & -3 & 1 \\
+            M & 0 & 0 & 0 & 1 & 1  & 0  \\
+            T & 0 & 0 & -1 & -2 & 0  & -2 \\
+            \hline
+        \end{tabular}
+    \end{center}   选取重复变量 $L$ 、 $v$ 、 $\rho$，它们的量纲行列式为
+    $$
+    \left|\begin{array}{ccc}
+        1 & 1 & -3 \\
+        0 & 0 & 1 \\
+        0 & -1 & 0
+    \end{array}\right|=1 \neq 0
+    $$
+    所以它们是线性无关的，可以作为重复变量。\\
+
+   
+
+    由相似理论可知，实验需要满足的相似参数为
+    $$\pi_1=\frac{R}{\rho v^2 L^2}, \quad \pi_2=\frac{v^2}{g  L}$$
+    由相似参数的相等性可得
+    $$\frac{R_s}{\rho_s v_s^2 L_s^2}=\frac{R_m}{\rho_m v_2^2 L_m^2}, \quad \frac{v_s^2}{g_s  L_s}=\frac{v_m^2}{g_m  L_m}$$
+    联立以上两个方程，
+    可解得
+   $$
+v_s=1.5 \times \sqrt{\frac{130}{4.2}} \approx 1.5 \times \sqrt{30.95} \approx 8.34 \mathrm{~m} / \mathrm{s}
+$$
+    $$R_s=R_m\frac{\rho_1 v_1^2 S_1}{\rho_2 v_2^2 S_2}=7.454\times\frac{1025\times8.34^2\times2400}{1000\times1.5^2\times(4.2^2/130^2\times2400)}=275954\mathrm{N}$$
+ \subsection{阻力计算与轴功率}   
+    
+    $$
+D_s=k_s \cdot v_s^{n_s}=13521 \times(8.34)^{1.85}=684167\mathrm{~N}
+$$
+    由轴功率公式可知，真实船航行需要的轴功率为
+    $$P=\frac{(D_s +R_s) v_s}{\eta}=8.01\times10^7\mathrm{W}$$
+\end{solution}
+
+\begin{problem}
+    据说外军曾研制一种天基动能武器＂上帝之杵＂，由低轨卫星搭载高密度金属杆，金属杆释放后在重力加速下高速抵达地面，以纯动能破坏地面目标。某报告披露，其金属杆参数大致为：直径 0.3 m，长度 6 m，材质为钨，据称在末端速度 $4500 \mathrm{~m} / \mathrm{s}$ 时可侵彻至地壳数百米深处。现设计一模型实验核验该报告内容。初步认为，长杆的侵彻深度主要与杆的尺寸、末端速度、杆材密度、靶材密度和靶材屈服强度相关。模型实验采用轻气炮发射一枚直径 6 mm 的金属钉（满足几何相似），打击特制的冰制靶体。相关材料的属性见下表。问：（1）模型长杆的密度和发射速应如何设定才能保证问题相似？（2）模型实验中金属钉头部侵入冰面约 0.5 m，请据此判断则上述报告宣称的侵彻效果是否属实。
+
+    \begin{tabular}{cccc}
+        \hline 材料属性 & 钨金属 & 岩石 $($ 地壳 $)$ & 水冰 $\left(-10^{\circ} \mathrm{C}\right)$ \\
+        \hline 密度 $\left(\mathrm{g} / \mathrm{cm}^3\right)$ & 19.35 & 3.0 & 0.92 \\
+        \hline 屈服强度 $(\mathrm{MPa})$ & 1300 & 150 & 12 \\
+        \hline
+    \end{tabular}
+\end{problem}
+
+\begin{solution}
+    \\
+    量纲矩阵:\\
+    \begin{center}
+        \begin{tabular}{ccccccc}
+            \hline
+            & $L$ & $v$ & $\rho_1$ & $\rho_2$ & $\sigma_2$ & $\sigma_1$ \\
+            \hline
+            L & 1 & 1 & -3 & -3 & -1 & -1 \\
+            M & 0 & 0 & 1  & 1  & 1  & 1  \\
+            T & 0 & -1 & 0  & 0  & -2 & -2 \\
+            \hline
+        \end{tabular}
+    \end{center}   选取重复变量 $L$ 、 $v$ 、 $\rho_2$，它们的量纲行列式为
+    $$
+    \left|\begin{array}{ccc}
+        1 & 1 & -3 \\
+        0 & 0 & 1 \\
+        0 & -1 & 0
+    \end{array}\right|=1 \neq 0
+    $$
+    所以它们是线性无关的，可以作为重复变量。\\
+    由相似理论可知，实验需要满足的相似参数为
+    $$\pi_1=\frac{\rho_1}{\rho_2}, \quad \pi_2=\frac{\sigma_1}{\rho_2 v^2}$$
+    由相似参数的相等性可得
+    $$\frac{\rho_{11}}{\rho_{21}}=\frac{\rho_{12}}{\rho_{22}}, \quad \frac{\sigma_{11}}{\rho_{21} v_1^2}=\frac{\sigma_{12}}{\rho_{22} v_2^2}$$
+    联立以上两个方程，
+    可解得
+    $$\rho_{12}=\rho_{22}\frac{\rho_{11}}{\rho_{21}}=0.92\times\frac{19.35}{3.0}=5.93\mathrm{g/cm^3}, \quad v_2=v_1\sqrt{\frac{\sigma_{12}\rho_{21}}{\sigma_{11
+}\rho_{22}}}=4500\times\sqrt{\frac{12\times3.0}{150\times0.92}}=1865\mathrm{m/s}$$
+    则上述报告宣称的侵彻效果为
+    $$h_1=h_2\frac{L_1}{L_2}=0.5\times\frac{6}{0.006}=500\mathrm{m}$$
+    该报告宣称的侵彻效果属实。
+
+\end{solution}
+
+
+在流体力学中，速度场的涡量（旋度）定义为：
+
+\[
+\vec{\omega} = \nabla \times \vec{v}
+\]
+
+其中，\(\vec{v} = (u, v, w)\) 是三维速度场，\(u\)、\(v\)、\(w\) 分别是流速在 \(x\)、\(y\)、\(z\) 方向的分量。涡量的分量为：
+
+\[
+\vec{\omega} = \left( \frac{\partial w}{\partial y} - \frac{\partial v}{\partial z}, \frac{\partial u}{\partial z} - \frac{\partial w}{\partial x}, \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} \right)
+\]
+
+给定的速度场为：
+
+\[
+u = -K y, \quad v = K x, \quad w = \left[\varphi(z) - 2K^2(x^2 + y^2)\right]^{1/2}
+\]
+
+我们分别计算涡量的三个分量。
+
+\textbf{第一分量：} \(\frac{\partial w}{\partial y} - \frac{\partial v}{\partial z}\)
+
+首先，计算 \(\frac{\partial w}{\partial y}\)：
+
+\[
+\frac{\partial w}{\partial y} = \frac{\partial}{\partial y} \left( \left[\varphi(z) - 2K^2(x^2 + y^2)\right]^{1/2} \right)
+= -\frac{2K^2 y}{\sqrt{\varphi(z) - 2K^2(x^2 + y^2)}}
+\]
+
+由于 \(v = Kx\) 不依赖于 \(z\)，所以：
+
+\[
+\frac{\partial v}{\partial z} = 0
+\]
+
+因此，第一分量为：
+
+\[
+\frac{\partial w}{\partial y} - \frac{\partial v}{\partial z} = -\frac{2K^2 y}{\sqrt{\varphi(z) - 2K^2(x^2 + y^2)}}
+\]
+
+\textbf{第二分量：} \(\frac{\partial u}{\partial z} - \frac{\partial w}{\partial x}\)
+
+由于 \(u = -K y\) 不依赖于 \(z\)，所以：
+
+\[
+\frac{\partial u}{\partial z} = 0
+\]
+
+接下来计算 \(\frac{\partial w}{\partial x}\)：
+
+\[
+\frac{\partial w}{\partial x} = \frac{\partial}{\partial x} \left( \left[\varphi(z) - 2K^2(x^2 + y^2)\right]^{1/2} \right)
+= -\frac{2K^2 x}{\sqrt{\varphi(z) - 2K^2(x^2 + y^2)}}
+\]
+
+因此，第二分量为：
+
+\[
+\frac{\partial u}{\partial z} - \frac{\partial w}{\partial x} = \frac{2K^2 x}{\sqrt{\varphi(z) - 2K^2(x^2 + y^2)}}
+\]
+
+\textbf{第三分量：} \(\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\)
+
+\[
+\frac{\partial v}{\partial x} = \frac{\partial}{\partial x} (K x) = K
+\]
+\[
+\frac{\partial u}{\partial y} = \frac{\partial}{\partial y} (-K y) = -K
+\]
+
+因此，第三分量为：
+
+\[
+\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} = K - (-K) = 2K
+\]
+
+\textbf{涡量的最终表达式：}
+
+综合上面计算的三个分量，涡量 \(\vec{\omega}\) 为：
+
+\[
+\vec{\omega} = \left( -\frac{2K^2 y}{\sqrt{\varphi(z) - 2K^2(x^2 + y^2)}}, \frac{2K^2 x}{\sqrt{\varphi(z) - 2K^2(x^2 + y^2)}}, 2K \right)
+\]
+
+
+
+\textbf{题目：} 设在极坐标系中某二维无源流动的流线方程写为 $\theta = \theta(r)$，流体的速度仅依赖于 $r$ 而与 $\theta$ 无关，证明此种情形下的涡量可以表示为
+
+\[
+\omega = \frac{K}{r} \frac{\mathrm{d}}{\mathrm{d} r} \left( r \frac{\mathrm{d} \theta}{\mathrm{d} r} \right),
+\]
+
+其中 $K$ 为一常数。
+
+\textbf{证明：}
+
+在极坐标系中，二维流动的速度分量可表示为：
+
+\[
+\vec{v} = v_r \hat{r} + v_\theta \hat{\theta},
+\]
+
+其中，$v_r$ 是径向速度，$v_\theta$ 是切向速度。在此题中，流体的速度仅依赖于径向坐标 $r$，因此
+
+\[
+v_r = v_r(r), \quad v_\theta = 0.
+\]
+
+涡量（旋度）在极坐标系中的定义为：
+
+\[
+\omega = \frac{1}{r} \frac{\partial}{\partial r} \left( r v_\theta \right) - \frac{\partial v_r}{\partial \theta}.
+\]
+
+由于 $v_\theta = 0$，所以第一项为 0。且由于流速仅依赖于 $r$，$\frac{\partial v_r}{\partial \theta} = 0$。因此涡量简化为：
+
+\[
+\omega = \frac{1}{r} \frac{\partial}{\partial r} \left( r v_\theta \right).
+\]
+
+因为流线方程为 $\theta = \theta(r)$，我们假设切向速度 $v_\theta$ 的形式为
+
+\[
+v_\theta = \frac{\mathrm{d} \theta}{\mathrm{d} r}.
+\]
+
+代入上述公式，得到涡量：
+
+\[
+\omega = \frac{1}{r} \frac{\mathrm{d}}{\mathrm{d} r} \left( r \frac{\mathrm{d} \theta}{\mathrm{d} r} \right).
+\]
+
+假设涡量与常数 $K$ 成正比，因此最终结果为：
+
+\[
+\omega = \frac{K}{r} \frac{\mathrm{d}}{\mathrm{d} r} \left( r \frac{\mathrm{d} \theta}{\mathrm{d} r} \right).
+\]
+
+证明完毕。
+
+\textbf{题目：} 速度场为
+
+\[
+u = y + 2z, \quad v = z + 2x, \quad w = x + 2y,
+\]
+
+求涡量和涡线方程，并求 \(x + y + z = 1\) 平面上横截面为 \(dS\) 的涡管强度。
+
+\textbf{解答：}
+
+1. \textbf{涡量的计算：}
+
+涡量 \(\vec{\omega} = (\omega_x, \omega_y, \omega_z)\) 是速度场的旋度，即：
+
+\[
+\vec{\omega} = \nabla \times \vec{v}
+\]
+
+速度场为：
+
+\[
+\vec{v} = (u, v, w) = (y + 2z, z + 2x, x + 2y)
+\]
+
+根据旋度公式：
+
+\[
+\omega_x = \frac{\partial w}{\partial y} - \frac{\partial v}{\partial z}, \quad \omega_y = \frac{\partial u}{\partial z} - \frac{\partial w}{\partial x}, \quad \omega_z = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}
+\]
+
+现在逐项计算：
+
+- \(\omega_x\)：
+
+\[
+\omega_x = \frac{\partial}{\partial y} (x + 2y) - \frac{\partial}{\partial z} (z + 2x) = 2 - 2 = 0
+\]
+
+- \(\omega_y\)：
+
+\[
+\omega_y = \frac{\partial}{\partial z} (y + 2z) - \frac{\partial}{\partial x} (x + 2y) = 2 - 1 = 1
+\]
+
+- \(\omega_z\)：
+
+\[
+\omega_z = \frac{\partial}{\partial x} (z + 2x) - \frac{\partial}{\partial y} (y + 2z) = 2 - 1 = 1
+\]
+
+因此，涡量为：
+
+\[
+\vec{\omega} = (0, 1, 1)
+\]
+
+2. \textbf{涡线方程：}
+
+涡线方程是满足以下条件的曲线方程：
+
+\[
+\frac{d\vec{r}}{ds} = \vec{\omega}
+\]
+
+其中 \(ds\) 是涡线的弧长，\(\vec{r} = (x, y, z)\) 是位置向量。
+
+因为涡量是常数向量 \((0, 1, 1)\)，所以涡线的方程为：
+
+\[
+\frac{dx}{ds} = 0, \quad \frac{dy}{ds} = 1, \quad \frac{dz}{ds} = 1
+\]
+
+积分得到：
+
+\[
+x = x_0, \quad y = s + y_0, \quad z = s + z_0
+\]
+
+因此，涡线方程为：
+
+\[
+x = x_0, \quad y = s + y_0, \quad z = s + z_0
+\]
+
+3. \textbf{涡管强度的计算：}
+
+涡管强度的定义为：
+
+\[
+\Gamma = \int_S \vec{\omega} \cdot d\vec{S}
+\]
+
+其中 \(S\) 是涡管的横截面，\(d\vec{S}\) 是该横截面的面元向量，方向垂直于平面 \(x + y + z = 1\)。
+
+在平面 \(x + y + z = 1\) 上，法向量为 \(\vec{n} = (1, 1, 1)\)（该平面方程的系数），并且该平面上的面积元素可以写为：
+
+\[
+d\vec{S} = \frac{1}{\sqrt{3}} (1, 1, 1) \, dS
+\]
+
+因此，涡管强度为：
+
+\[
+\Gamma = \int_S \vec{\omega} \cdot \frac{1}{\sqrt{3}} (1, 1, 1) \, dS = \frac{1}{\sqrt{3}} \int_S (0 \cdot 1 + 1 \cdot 1 + 1 \cdot 1) \, dS
+\]
+
+\[
+\Gamma = \frac{1}{\sqrt{3}} \int_S 2 \, dS
+\]
+
+若横截面积为 \(A\)，则有：
+
+\[
+\Gamma = \frac{2}{\sqrt{3}} A
+\]
+
+\section*{应力法将有体积力问题转化为无体积力问题}
+
+\subsection*{1. 原始平衡方程（含体积力）}
+\begin{equation}
+\sigma_{ij,j} + b_i = 0
+\end{equation}
+
+\subsection*{2. 引入辅助应力场}
+\begin{equation}
+\sigma_{ij,j}^0 + b_i = 0
+\end{equation}
+
+定义剩余应力场：
+\begin{equation}
+\sigma_{ij}^* = \sigma_{ij} - \sigma_{ij}^0
+\end{equation}
+
+则剩余应力满足无体积力的平衡方程：
+\begin{equation}
+\sigma_{ij,j}^* = 0
+\end{equation}
+
+\subsection*{3. 应力 - 应变关系}
+\begin{equation}
+ \varepsilon_{kk}^* + 2 \mu \varepsilon_{ij}^*, \quad
+\varepsilon_{ij}^* = \frac{1}{2} \left( u_{i,j}^* + u_{j,i}^* \right)
+\end{equation}
+
+\subsection*{4. 兼容条件}
+\begin{equation}
+\varepsilon_{ij,kl}^* + \varepsilon_{kl,ij}^* - \varepsilon_{ik,jl}^* - \varepsilon_{jl,ik}^* = 0
+\end{equation}
+
+\subsection*{5. 边界条件}
+\begin{align}
+u_i &= \bar{u}_i \quad \text{on } \Gamma_u \\
+\sigma_{ij}^* n_j &= \bar{t}_i - \sigma_{ij}^0 n_j \quad \text{on } \Gamma_t
+\end{align}
+
+
+
+\end{document}

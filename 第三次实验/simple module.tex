@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage[margin=2cm]{geometry} % 设置较窄的边距使文档宽一些
+\usepackage{multirow} % 支持表格中的多行单元格
+\usepackage{graphicx} % 用于插入图片
+\usepackage{subcaption} % 支持子标题
+\usepackage{float} % 支持 [H] 浮动体选项
+\title{\heiti\zihao{2} 动载荷结构动应力测试实验  }
+\author{\songti  孙振川\quad PB23081463  王晨萱 \quad PB23331860 \\
+课程号  ME2009.01 }
+\date{\today}
+\begin{document}
+    \maketitle
+\begin{abstract}
+    通过本次实验，学习了动载荷结构动应力测试的基本方法，掌握了动载荷结构动应力实验装置的使用，并熟练掌握了用电阻应变片测量简支梁在动载荷作用下的动应力的方法。实验中通过释放重物激振简支梁，利用应变片测量了梁在不同支撑方式下的动应力信号，并记录了各测点的周期、频率及峰峰值。实验结果显示，各通道应力波形的相位相同，但最大值不同，反映了不同位置的受力情况。通过本次实验，加深了对动载荷结构动应力测试原理和方法的理解，提高了实际操作能力。
+    \noindent{\textbf{关键词： }    动载荷；简支梁；电阻应变片；动应力测试}
+\end{abstract}
+\section{实验目的}
+\begin{enumerate}
+    \item 熟练掌握仪器的使用。 
+    \item 测试横梁在冲击载荷作用下的动应力。
+    \item 将电测方法测试的动应力与静载荷作用下的应力做比较，以加深学生对动载  
+荷的理解。 
+\end{enumerate}
+
+\section{实验器材}
+\subsection{实验装置及仪器}
+\label{sec:equipment}
+    \begin{enumerate}
+        \item 动载荷结构动应力实验装置
+        \item DH5922D
+        \item 计算机及测试分析软件
+    \end{enumerate} 
+\subsection{简支梁的贴片}
+1\#、2\#、3\#片分别位于梁水平上平面的纵向轴对称中心线上，2\#、3\#片关于 1\#片成左右对称分布、主要做温度补偿作用，如果实验室环境较为恒定，无明显温度变化，则不需要使用 2\#、3\#片，1\#片贴在梁的中心位置，上述三枚应变片均为引好线、并涂抹防护胶水，如图 所示
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img1.png}
+    \caption{实验梁贴片图 }
+\end{figure}
+
+\section{实验原理}
+\subsection{实验设计原理}
+如果运动物体以比较大的速度作用于静止的工程构件 (被冲击物体)，工程构件
+将承受很大的作用力，这一作用力称为冲击载荷。这种现象称为冲击，工程构件由
+于冲击引起的应力称为冲击应力。在冲击过程中，由于被冲击物体的阻碍，冲击物
+体的速度在极短的时间发生剧烈的变化，甚至降低为零，出现相当大的冲击运动方
+向相反的加速度。因此，在冲击物体与被冲击物体之间必然出现很大的作用力与反
+作用力，这将导致被冲击的工程构件出现很大的冲击应力和变形。
+
+\subsection{电阻应变测量原理 }
+电阻应变测试方法是用电阻应变片测定构件的表面应变，再根据应变—应力关
+系 (即电阻一应变效应) 确定构件表面应力状态的一种实验应力分析方法。这种方法
+是以粘贴在被测构件表面上的电阻应变片作为传感元件，当构件变形时，电阻应变
+片的电阻值将发生相应的变化，利用电阻应变仪将此电阻值的变化测定出来，并换
+算成应变值或输出与此应变值成正比的电压信号，由应变测试分析仪记录下来，就
+可得到所测定的应变或应力。
+\subsection{电阻应变片}
+电阻应变片一般由敏感栅、引线、基底、覆盖层和粘结剂组成，图 1-3 所示为
+其构造简图。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img2.png}
+    \caption{电阻应变片基本构造示意图 }
+\end{figure}
+
+\subsection{测量电路原理  }
+\subsubsection{$1 / 4$ 桥接线法  }
+通过在试件上粘贴电阻应变片，可以将试件的应变转换为应变片的电阻变化，
+但是通常这种电阻变化是很小的。为了便于测量，需将应变片的电阻变化转换成电
+压 (或电流) 信号，再通过电子放大器将信号放大，然后由指示仪或记录仪指示出应
+变值。这一任务是由电阻应变仪来完成的。而电阻应变仪中电桥的作用是将应变片
+的电阻变化转换成电压 (或电流) 信号。
+
+
+
+若在测量电桥中的 AB 臂上接应变片，而另外三臂 BC、CD 和 DA 接应变仪内部的固定电阻 R，则称为 $1 / 4$ 桥接线法，如图所示。由于 BC、CD 和 DA 桥臂间接固定电阻，不感受应变，即应变为零。由公式：
+
+$$
+\boldsymbol{\varepsilon} d_{d s}=\boldsymbol{\varepsilon}{ }_1-\boldsymbol{\varepsilon} \boldsymbol{\varepsilon}_2+\boldsymbol{\varepsilon}{ }_3-\boldsymbol{\varepsilon}{ }_4
+$$
+
+
+可得到应变仪的读数应变为：$\varepsilon \mathrm{ds}=\varepsilon 1$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img3.png}
+    \caption{电路接桥示意图  }
+\end{figure}
+
+
+\subsubsection{温度补偿片 }
+温度的变化对测量应变有着一定的影响，消除温度变化的影响可采用以下方法。实测时，把粘贴在受载荷构件上的应变片作为 $\mathrm{R}_1$ ，以相同的应变片粘贴在材料和温度都与构件相同的补偿块上，作为 $\mathrm{R}_2$ ，以 $\mathrm{R}_1$ 和 $\mathrm{R}_2$ 组成测量电桥的半桥，电桥的另外两臂 $\mathrm{R}_3$ 和 $\mathrm{R}_4$ 为测试仪内部的标准电阻，则可以消除温度影响。
+
+利用这种方法可以有效地消除了温度变化的影响，其中作为 $\mathrm{R}_2$ 的电阻应变片就是用来平衡温度变化的，称为温度补偿片。
+
+\subsection{横梁的支撑方式}
+在本设计台架中，简支梁采用钢梁，弹性模量 $\mathrm{E}=206 \mathrm{GPa}$ ，长度 $\mathrm{L}=500 \mathrm{~mm}$ ，横截面 $\mathrm{S}=\mathrm{a} \times \mathrm{b}=20 \mathrm{~mm} \times 3 \mathrm{~mm}$ ，砝码的重量 $\mathrm{F}=\mathrm{W} \times \mathrm{g}=0.2 \mathrm{~kg} \times 10 \mathrm{~N} / \mathrm{kg}=2 \mathrm{~N}, ~ \mathrm{~h}=100 \mathrm{~mm} \sim 300 \mathrm{~mm}$ 。弹簧的弹性系数为 $\mathrm{k}=30$ 。本实验装置其中一侧的底座固定，另外一侧的底座采用滑轨式，可左右滑动，调节梁支撑的距离，并可实现三种支撑作用下的动应力测试。
+
+横梁的三种支撑方式的具体实现为：
+\begin{enumerate}
+        \item 简支：第一个圆棒在上端用两根细螺栓下顶，使得第一个圆棒和第二个圆棒一起向下移动，第二根圆棒下的弹簧被下压变形，第二个圆棒和底下的支撑底座接触。此时两侧的第一个圆棒、第二个圆棒和梁一起被固定，因此构成一种简支的形式。
+        \item 弹簧支撑：其中一侧的第二个圆棒的下方装有规格相同的两根弹簧，第一个用两根细螺栓拉起不和横梁接触，第二个圆棒在没有收到外力作用时，弹簧顶起第二个圆棒，构成一种弹簧支撑的形式。
+        \item 悬臂：带滑轨一侧的支撑底座被去掉，另一侧固定住，撗梁变为悬臂支撑。
+\end{enumerate} 
+
+\subsection{三种支撑作用下动态应力测试}
+\subsubsection{两端简支 }
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img4.png}
+    \caption{两端简支情况下简支梁模型  }
+\end{figure}
+
+在本设计台架中，简支梁采用钢梁，弹性模量 $\mathrm{E}=206 \mathrm{GPa}$ ，长度 $\mathrm{L}=400 \mathrm{~mm}$ ，横截面 $\mathrm{S}=\mathrm{a} * \mathrm{~b}=20 \mathrm{~mm} \times 3 \mathrm{~mm}$ ，截面惯性矩 $\mathrm{I}=\mathrm{ab}^3 / 12=45 \mathrm{~mm}^4$ ，截面模量 $\mathrm{W}=\mathrm{ab}^2 / 6=30 \mathrm{~mm}^3$ ，砝码的重量 $\mathrm{F}=\mathrm{W} \times \mathrm{g}=0.2 \mathrm{~kg} \times 10 \mathrm{~N} / \mathrm{kg}=2 \mathrm{~N}$ ，h 为重物释放的高度，$\triangle_{\mathrm{st}}$ 为简支梁中点 C 在重力作用下的挠度，弹簧的弹性系数为 $\mathrm{k}=30$ 。
+
+梁的两端为刚性支座，则简支梁中点 C 在重力作用下挠度 $\triangle \mathrm{st}$ 为
+
+$$
+\Delta_{s t}=\frac{F L^3}{48 E I}=\frac{2 \times 400^3}{48 \times 206 \times 10^3 \times 45}=0.2867
+$$
+
+\subsubsection{两端弹性支座  }
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img5.png}
+    \caption{两端简支情况下简支梁模型  }
+\end{figure}
+
+与两端简支的刚性支座相比，不同之处在于梁的静位移包括弹簧变形，假设弹簧的弹性系数为 $\mathrm{K}=30$ ，弹性支座梁的中点 C 静位移 $\triangle \mathrm{st}$ 为：
+
+$$
+\Delta_{s t}=\frac{F L^3}{48 E I}+\frac{F}{2 k}=\frac{2 \times 40^3}{48 \times 206 \times 10^3 \times 45}+\frac{2}{2 \times 30}=0.32
+$$
+\section{实验方法}
+1．把实验台架安装于操作台上，注意梁要保持水平，测试各应变片阻值是否正常。
+
+2．将梁上应变片接入应变信号输入线，应变信号输入线接入数据采集仪，打开数据采集仪的电源开关。
+
+3．实验前将立杆通过底部的螺纹孔，用螺钉销在底座开槽处，调节立杆上滑动部位的高度，选择合适的高度后将滑动部分固定处。
+
+4．在采集软件中进行依次进行设置，采样率 50 KHZ，旋动旋动磁性表座的旋钮，释放重物，重物下落撞击梁，使梁产生应变，采集该应变信号，同时采集加速度信号。
+
+5．更改横梁的固定方式，按照两端弹性支撑的方式，重复 3、4 项操作，实现不同固定方式下动载荷应变应力测试。
+
+6．测量静载荷在悬臂梁不同位置时，梁上 $2--3$ 个点的静态应变，并进行分析。
+
+7. 实验完毕，卸载，实验台和仪器恢复原状。
+\section{测量结果}
+梁的弹性模量 $\mathrm{E}=206 \mathrm{GPa}$ ，长度 $\mathrm{L}=400 \mathrm{~m}$ ，横截面 $\mathrm{S}=\mathrm{a} \times \mathrm{b}=20 \mathrm{~mm} \times 3 \mathrm{~mm}$ ，砝码的重量
+$\mathrm{F}=\mathrm{W} \times \mathrm{g}=0.2 \mathrm{~kg} \times 10 \mathrm{~N} / \mathrm{kg}=2 \mathrm{~N}$ ，弹簧的弹性系数为 $\mathrm{k}=30$ 。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img1.jpg}
+    \caption{两端简支动应力测试波形图  }
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img2.jpg}
+    \caption{ 测量结果 }
+\end{figure}
+
+
+\end{document}

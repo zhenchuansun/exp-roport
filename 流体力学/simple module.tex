@@ -1,0 +1,127 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+
+\title{\textbf{实验力学作业 2}}
+\author{孙振川 \quad PB23081463}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答:}}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记。}}{\par}
+
+\begin{document}
+
+\maketitle
+\begin{problem}
+采用控制体积微元法，推导柱坐标系下的微分形式动量方程
+\end{problem}
+
+\begin{solution}
+设柱坐标系下的速度分量为$u_r, u_\theta, u_z$，密度为$\rho$，压力为$p$，体积力为$f_r, f_\theta, f_z$。考虑一个微小的柱坐标系控制体积，半径方向长度为$dr$，角度方向长度为$r d\theta$，轴向长度为$dz$。
+1. 质量守恒方程：
+\[\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u}) = 0\]
+2. 动量守恒方程：
+在$r$方向：
+\[\rho \left( \frac{\partial u_r}{\partial t} + u_r \frac{\partial u_r}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_r}{\partial \theta} + u_z \frac{\partial u_r}{\partial z} - \frac{u_\theta^2}{r} \right) = -\frac{\partial p}{\partial r} + \rho f_r\]
+在$\theta$方向：
+\[\rho \left( \frac{\partial u_\theta}{\partial t} + u_r \frac{\partial u_\theta}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_\theta}{\partial \theta} + u_z \frac{\partial u_\theta}{\partial z} + \frac{u_r u_\theta}{r} \right) = -\frac{1}{r} \frac{\partial p}{\partial \theta} + \rho f_\theta\]
+在$z$方向：
+\[\rho \left( \frac{\partial u_z}{\partial t} + u_r \frac{\partial u_z}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_z}{\partial \theta} + u_z \frac{\partial u_z}{\partial z} \right) = -\frac{\partial p}{\partial z} + \rho f_z\]
+综上所述，柱坐标系下的微分形式动量方程为
+\begin{align*}
+&\rho \left( \frac{\partial u_r}{\partial t} + u_r \frac{\partial u_r}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_r}{\partial \theta} + u_z \frac{\partial u_r}{\partial z} - \frac{u_\theta^2}{r} \right) = -\frac{\partial p}{\partial r} + \rho f_r, \\
+&\rho \left( \frac{\partial u_\theta}{\partial t} + u_r \frac{\partial u_\theta}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_\theta}{\partial \theta} + u_z \frac{\partial u_\theta}{\partial z} + \frac{u_r u_\theta}{r} \right) = -\frac{1}{r} \frac{\partial p}{\partial \theta} + \rho f_\theta, \\
+&\rho \left( \frac{\partial u_z}{\partial t} + u_r \frac{\partial u_z}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_z}{\partial \theta} + u_z \frac{\partial u_z}{\partial z} \right) = -\frac{\partial p}{\partial z} + \rho f_z.
+\end{align*}
+
+\end{solution}
+\begin{problem}
+采用控制体积微元法，推导柱坐标系下的微分形式能量方程
+\end{problem}
+
+\begin{solution}
+设柱坐标系下的速度分量为$u_r, u_\theta, u_z$，密度为$\rho$，压力为$p$，内能为$e$，热传导率为$k$，体积力为$f_r, f_\theta, f_z$。考虑一个微小的柱坐标系控制体积，半径方向长度为$dr$，角度方向长度为$r d\theta$，轴向长度为$dz$。
+能量守恒方程：
+\[\rho \left( \frac{\partial e}{\partial t} + u_r \frac{\partial e}{\partial r} + \frac{u_\theta}{r} \frac{\partial e}{\partial \theta} + u_z \frac{\partial e}{\partial z} \right) = -p \left( \nabla \cdot \mathbf{u} \right) + \nabla \cdot (k \nabla T) + \rho (f_r u_r + f_\theta u_\theta + f_z u_z)\]
+其中，$\nabla \cdot \mathbf{u}$在柱坐标系下表示为：
+\[\nabla \cdot \mathbf{u} = \frac{1}{r} \frac{\partial (r u_r)}{\partial r} + \frac{1}{r} \frac{\partial u_\theta}{\partial \theta} + \frac{\partial u_z}{\partial z}\]
+综上所述，柱坐标系下的微分形式能量方程为
+\[\rho \left( \frac{\partial e}{\partial t} + u_r \frac{\partial e}{\partial r} + \frac{u_\theta}{r} \frac{\partial e}{\partial \theta} + u_z \frac{\partial e}{\partial z} \right) = -p \left( \frac{1}{r} \frac{\partial (r u_r)}{\partial r} + \frac{1}{r} \frac{\partial u_\theta}{\partial \theta} + \frac{\partial u_z}{\partial z} \right) + \nabla \cdot (k \nabla T) + \rho (f_r u_r + f_\theta u_\theta + f_z u_z)\]
+
+
+\end{solution}
+
+
+\title{柱坐标系下能量方程的推导}
+\author{}
+\date{}
+\maketitle
+
+\section*{推导过程}
+
+首先，考虑流体在柱坐标系下的控制体积微元。柱坐标系的坐标为 \((r, \theta, z)\)，其中 \(r\) 是径向坐标，\(\theta\) 是角坐标，\(z\) 是高度坐标。
+
+对于控制体积微元，能量的变化率包含了三项：
+
+1. **能量的传递**：通过对流（流体的流动）和传导（热的传递）。
+2. **能量的输入和输出**：包括外力做功和热源。
+3. **局部的能量积累**：流体中能量的增加或减少。
+
+能量方程的微分形式可表示为：
+
+\[
+\frac{\partial}{\partial t} \left( \rho E \right) + \nabla \cdot \left( \rho E \mathbf{v} \right) = \nabla \cdot \left( k \nabla T \right) + \Phi + Q
+\]
+
+其中：
+- \(\rho E\) 是单位体积的总能量，\(\rho\) 是流体密度，\(E = e + \frac{v^2}{2}\) 是总能量（包括内部能和动能），其中 \(e\) 是内部能，\(v\) 是流速。
+- \(\mathbf{v}\) 是流速矢量。
+- \(k\) 是热导率。
+- \(\Phi\) 是粘性耗散项（由于粘性引起的能量损失）。
+- \(Q\) 是外部热源。
+
+接下来，我们在柱坐标系下展开各个项。
+
+\subsection*{对流项}
+
+对流项 \(\nabla \cdot \left( \rho E \mathbf{v} \right)\) 展开为：
+
+\[
+\nabla \cdot \left( \rho E \mathbf{v} \right) = \frac{1}{r} \frac{\partial}{\partial r} \left( r \rho E v_r \right) + \frac{1}{r} \frac{\partial}{\partial \theta} \left( \rho E v_\theta \right) + \frac{\partial}{\partial z} \left( \rho E v_z \right)
+\]
+
+其中，\(v_r\), \(v_\theta\), \(v_z\) 分别是径向、角向和垂直方向上的速度分量。
+
+\subsection*{热传导项}
+
+热传导项 \(\nabla \cdot \left( k \nabla T \right)\) 展开为：
+
+\[
+\nabla \cdot \left( k \nabla T \right) = \frac{1}{r} \frac{\partial}{\partial r} \left( r k \frac{\partial T}{\partial r} \right) + \frac{1}{r} \frac{\partial}{\partial \theta} \left( k \frac{\partial T}{\partial \theta} \right) + \frac{\partial}{\partial z} \left( k \frac{\partial T}{\partial z} \right)
+\]
+
+\subsection*{粘性耗散项}
+
+粘性耗散项 \(\Phi\) 可通过以下公式表示：
+
+\[
+\Phi = \mu \left( \frac{\partial v_r}{\partial r} + \frac{1}{r} \frac{\partial v_\theta}{\partial \theta} + \frac{\partial v_z}{\partial z} \right)^2
+\]
+
+其中，\(\mu\) 是流体的粘度。
+
+\subsection*{外部热源项}
+
+外部热源项 \(Q\) 是体积单位的热源。
+
+\subsection*{最终的能量方程}
+
+将上述项代入能量方程中，得到柱坐标系下的能量方程的微分形式：
+
+$$
+\frac{\partial}{\partial t} \left( \rho E \right) + \frac{1}{r} \frac{\partial}{\partial r} \left( r \rho E v_r \right) + \frac{1}{r} \frac{\partial}{\partial \theta} \left( \rho E v_\theta \right) +   $$$$ 
+\frac{\partial}{\partial z} \left( \rho E v_z \right) = \frac{1}{r} \frac{\partial}{\partial r} \left( r k \frac{\partial T}{\partial r} \right)   \\  $$$$
++ \frac{1}{r} \frac{\partial}{\partial \theta} \left( k \frac{\partial T}{\partial \theta} \right) + \frac{\partial}{\partial z} \left( k \frac{\partial T}{\partial z} \right) + \Phi + Q $$ 
+\end{document}
